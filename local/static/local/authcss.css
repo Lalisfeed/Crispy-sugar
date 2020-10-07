@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: .2s;
+}
+
+
+header{
+    padding: 14px 0px;
+    text-align: center;
+}
+
+
+h1{
+    font-family: 'Sansita Swashed', cursive;
+    font-size: 75px;
+    color: #333;
+}
