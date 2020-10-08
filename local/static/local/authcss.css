@@ -15,6 +15,9 @@ header {
 footer {
     color: #777;
     padding: 14px 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
     text-align: center;
 }
 
