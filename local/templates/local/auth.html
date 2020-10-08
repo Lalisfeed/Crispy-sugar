@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kechup | Easy Data And Orders Management</title>
+    <title>Kechup | Easy Database & Order Management System</title>
     <link href="{% static 'local/authcss.css' %}" rel="stylesheet">
+    <link rel="shortcut icon" href="{% static 'local/src/bill.png' %}" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@900&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -13,10 +14,21 @@
         <h1>Kechup.</h1>
     </header>
     <section>
-
+        <div class="forms">
+            <div class="form-next">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <input type="text" name="namecall" class="k-name" autocomplete="off" placeholder="Name">
+                    <input type="password" name="codecall" class="k-code" autocomplete="off" placeholder="Passcode">
+            </div>
+            <div class="form-mate">
+                <input type="submit" value="Go" class="k-send">
+                </form>
+            </div>
+        </div>
     </section>
     <footer>
-
+        <h5> &copy; 2020 Kechup Inc.</h5>
     </footer>
 </body>
 </html>
