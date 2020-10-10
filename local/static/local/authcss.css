@@ -28,6 +28,9 @@ h1 {
 }
 
 
+h4 {
+    font-family: sans-serif;
+}
 section {
     width: 100%;
     height: 800px;
@@ -71,4 +74,9 @@ section {
 .k-send:hover {
     background: #222;
     cursor: pointer;
+}
+
+a, a:visited, a:hover {
+    color: #09aa09;
+    text-decoration: none;
 }

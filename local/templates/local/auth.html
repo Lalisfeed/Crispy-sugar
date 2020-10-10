@@ -18,8 +18,8 @@
             <div class="form-next">
                 <form action="" method="post">
                     {% csrf_token %}
-                    <input type="text" name="namecall" class="k-name" autocomplete="off" placeholder="Name">
-                    <input type="password" name="codecall" class="k-code" autocomplete="off" placeholder="Passcode">
+                    <input type="text" name="namecall" class="k-name" autocomplete="off" placeholder="Name" title="Enter Your Name">
+                    <input type="password" name="codecall" class="k-code" autocomplete="off" placeholder="Passcode" title="Enter Secret Code">
             </div>
             <div class="form-mate">
                 <input type="submit" value="Go" class="k-send">
@@ -28,8 +28,10 @@
         </div>
     </section>
     <footer>
+        <a href="mailto:Lalisfeed.in@gmail.com" title="Get an Account for Your Restaurant">
+            <h4>Request Account</h4>
+        </a>
         <h5> &copy; 2020 Kechup Inc.</h5>
-        Request Account
     </footer>
 </body>
 </html>
