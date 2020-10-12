@@ -4,6 +4,6 @@ from . import views
 app_name = "local"
 urlpatterns = [
     path('', views.auth, name="auth"),
-    path('edit/', views.edit, name="edit"),
+    path('settings/', views.settings, name="settings"),
     path('order/', views.orders, name="orders"),
 ]

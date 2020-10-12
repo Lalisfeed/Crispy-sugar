@@ -11,7 +11,7 @@ def auth(request):
 
 
 # page for adding or deleting any items from the  owners database
-def edit(request):
+def settings(request):
     return render(request, 'local/editpage.html')
 
 
