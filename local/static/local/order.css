@@ -14,12 +14,18 @@ header {
 
 h1 {
     font-family: 'Sansita Swashed', cursive;
-    font-size: 75px;
+    font-size: 50px;
     color: #333;
 }
 
 
 footer {
-    text-align: center;
-    margin-bottom: 0;
+    width: 100%;
+    color: #777;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 14px 10px;
+    position: fixed;
+    bottom: 0;
 }
