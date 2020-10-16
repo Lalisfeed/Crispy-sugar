@@ -26,5 +26,7 @@ def offline(request):
 
 
 # page to render when content is not loaded
-def error(request):
-    return render(request, 'local/error.html')
+def error(request, error):
+    return render(request, 'local/error.html',{
+        'error': error,
+    })
