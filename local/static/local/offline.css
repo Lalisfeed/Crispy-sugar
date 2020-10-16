@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: .2s;
+    user-select: none;
+}
+
+
+header {
+    padding: 14px 0px;
+    text-align: center;
+}
+
+
+h1 {
+    font-family: 'Sansita Swashed', cursive;
+    font-size: 50px;
+    color: #333;
+}
+
+
+section {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 75px 0px;
+    flex-direction: column;
+}
+
+
+img {
+    width: 200px;
+    height: 200px;
+    margin: 50px 0px;
+}
+
+
+h2 {
+    color: #777;
+    font-size: x-large;
+    margin: 10px;
+    font-family: 'Sansita Swashed', cursive;
+}
+
+
+h3 {
+    color: #777;
+    font-size: x-large;
+}
+
+
+footer {
+    width: 100%;
+    color: #777;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 14px 10px;
+    position: fixed;
+    bottom: 0;
+}

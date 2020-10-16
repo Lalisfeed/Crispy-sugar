@@ -18,3 +18,13 @@ def settings(request):
 # page for all orders acceptance + calculate bills
 def orders(request):
     return render(request, 'local/order.html')
+
+
+# page to render when offline
+def offline(request):
+    return render(request, 'local/offline.html')
+
+
+# page to render when content is not loaded
+def error(request):
+    return render(request, 'local/error.html')
