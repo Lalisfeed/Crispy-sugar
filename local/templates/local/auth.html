@@ -26,8 +26,8 @@
             <div class="form-next">
                 <form action="" method="post">
                     {% csrf_token %}
-                    <input type="text" name="namecall" class="k-name" autocomplete="off" placeholder="Name" title="Enter Your Name">
-                    <input type="password" name="codecall" class="k-code" autocomplete="off" placeholder="Passcode" title="Enter Secret Code">
+                    <input type="text" name="namecall" class="k-name" autocomplete="off" placeholder="Name" title="Enter Your Name" required>
+                    <input type="password" name="codecall" class="k-code" autocomplete="off" placeholder="Passcode" title="Enter Secret Code" required>
             </div>
             <div class="form-mate">
                 <input type="submit" value="Go" class="k-send">
@@ -40,6 +40,9 @@
             <h4>Request Account</h4>
         </a>
         <h5> &copy; 2020 Kechup Inc.</h5>
+        <a href="mailto:Akhilraj1729@gmail.com" title="Mail us your contact details">
+            <h4>Request Deletion</h4>
+        </a>
     </footer>
 
 
