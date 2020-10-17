@@ -2,8 +2,8 @@
 name: Ask for a New Feature
 about: Suggest your own ideas for this project
 title: ''
-labels: ''
-assignees: ''
+labels: creativity
+assignees: Lalisfeed
 
 ---
 
