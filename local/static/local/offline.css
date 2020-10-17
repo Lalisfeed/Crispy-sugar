@@ -24,7 +24,7 @@ section {
     display: flex;
     justify-content: center;
     text-align: center;
-    padding: 75px 0px;
+    padding: 50px 0px;
     flex-direction: column;
 }
 
@@ -32,14 +32,13 @@ section {
 img {
     width: 200px;
     height: 200px;
-    margin: 50px 0px;
+    margin: 42px 0px;
 }
 
 
 h2 {
     color: #777;
     font-size: x-large;
-    margin: 10px;
     font-family: 'Sansita Swashed', cursive;
 }
 
@@ -47,6 +46,7 @@ h2 {
 h3 {
     color: #777;
     font-size: x-large;
+    margin: 10px 0px;
 }
 
 

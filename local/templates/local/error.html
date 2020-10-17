@@ -2,15 +2,33 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page Not Found</title>
-    <link href="{% static 'local/error.css' %}" rel="stylesheet">
+    <link href="{% static 'local/offline.css' %}" rel="stylesheet">
     <link rel="shortcut icon" href="{% static 'local/src/bill-not.png' %}" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@900&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    
+    <header>
+        <h1>Kechup.</h1>
+    </header>
+    <section>
+        <div>
+            <img src="{% static 'local/src/error-404.png' %}" style="width:300px;" alt="Error occoured">
+        </div>
+        <div>
+            <h2>Something's Wrong</h2>
+            <h2>(>︿<)</h2>
+            <h2>Try Again!</h2>
+        </div>
+    </section>
+    <footer>
+        <h5> &copy; 2020 Kechup Inc.</h5>
+    </footer>
 </body>
+
 </html>
