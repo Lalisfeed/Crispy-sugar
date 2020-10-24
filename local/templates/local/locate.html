@@ -1,0 +1,49 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% endblock %} | Kechup</title>
+    <link href="{% static 'local/locate.css' %}" rel="stylesheet">
+    <link rel="shortcut icon" href="{% static 'local/src/bill.png' %}" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@900&display=swap" rel="stylesheet">
+    {% block head %} {% endblock %}
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <div class="logo-1"><a href="{% url 'local:menu' %}"><h1>Kechup.</h1></a></div>
+        </div>
+        <div class="but-s">
+            <div class="buts-on"><a href="{% url 'local:menu' %}"><button class="but-x" id="x0">Menu</button></a></div>
+            <div class="buts-on"><a href="{% url 'local:orders' %}"><button class="but-x" id="x1">Orders</button></a></div>
+            <div class="buts-on"><a href="{% url 'local:settings' %}"><button class="but-x" id="x2">Settings</button></a></div>
+            <div class="buts-on"><a href="{% url 'local:profile' %}"><button class="but-x" id="x3">menu</button></a></div>
+        </div>
+        <div class="buts-on"><a href="{% url 'local:auth' %}"><button class="but-x">Logout</button></a></div>
+        <div class="contact">
+            <h5>Contact Us</h5>
+        </div>
+        <div class="next-id">
+                <h5> &copy; 2020 Kechup Inc.</h5>
+        </div>
+    </header>
+    <div class="bord"></div>
+    
+    <section class="section-xy">
+        {% block body %}
+        {% endblock %}
+        <!-- <section class="section-x">
+            <div>kechup</div>
+        </section>
+        <section class="section-y">
+            <div>kechup</div>
+        </section>  -->
+    </section>
+</body>
+
+</html>

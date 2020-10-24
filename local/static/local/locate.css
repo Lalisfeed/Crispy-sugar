@@ -1,0 +1,77 @@
+ * {
+    margin: 0px;
+    padding: 0px;
+    transition: 0.2px ease-in;
+    box-sizing: border-box;
+ }
+
+ header {
+     width: 250px;
+     height: 100%;
+     position: fixed;
+     overflow: hidden;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     text-align: center;
+     background-color: #d1d1d1;
+     font-family: 'Sansita Swashed', cursive;
+ }
+
+.logo {
+    width: 100%;
+    text-align: center;
+    padding: 14px 0px;
+}
+
+.logo-1 {
+    color: #333;
+    font-size: larger;
+}
+
+.logo-1 a , .logo-1 a:visited ,.logo-1 a:active, .logo-1 a:focus{
+    color: #333;
+    text-decoration: none;
+}
+ .but-s {
+     height: fit-content;
+     margin: 100px 0px;
+ }
+
+ .buts-on {
+     width: 250px;
+     height: 52px;
+ }
+
+ .but-x {
+     width: 100%;
+     height: 100%;
+     border-radius: 0px;
+     border-width: 0px;
+     background: #d1d1d1;
+     outline: none !important;
+     font-size: 20px;
+     font-family: 'Sansita Swashed', cursive;
+     cursor: pointer;
+ }
+
+ 
+ .but-x:hover,  .but-x:active{
+     background: #007d00;
+ }
+
+
+
+ .next-id {
+    width: 100%;
+    height: 42px;
+    margin-bottom: 0px;
+    padding: 14px 0px;
+    text-align: center;
+    bottom: 0;
+ }
+
+
+ .bord {
+     border: 1px solid #efefef;
+ }

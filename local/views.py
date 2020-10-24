@@ -11,8 +11,8 @@ def auth(request):
 
 
 # page for menu + all orders acceptance + calculate bills
-def orders(request):
-    return render(request, 'local/order.html')
+def menu(request):
+    return render(request, 'local/menu.html')
 
 
 # page for adding or deleting any items from the  owners database
@@ -21,8 +21,13 @@ def settings(request):
 
 
 # page for listing past orders
-def history(request):
-    return render(request, 'local/history.html')
+def orders(request):
+    return render(request, 'local/orders.html')
+
+
+# page for viewing profile and request option for deleting account
+def profile(request):
+    return render(request, 'local/profill.html')
 
 
 # page to render when offline
