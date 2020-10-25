@@ -10,6 +10,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@900&display=swap" rel="stylesheet">
 </head>
 <body>
+
+<!-- loading path -->
+
     <div class="page">
         <div>
             <img src="{% static 'local/src/Lazy-kook.png' %}" alt="Loadin ...">
@@ -18,9 +21,16 @@
             <h2>Loading ...</h2>
         </div>
     </div>
+
+<!-- header part -->
+
     <header>
         <h1>Kechup.</h1>
     </header>
+
+
+<!-- content entering path -->
+
     <section class="log-div">
         <div class="forms">
             <div class="form-next">
@@ -35,25 +45,55 @@
             </div>
         </div>
     </section>
+
+
+<!-- Creators Path to show Info -->
+
+    <section class="creators">
+    <div class="cret-meet">
+        <h1>Meet The Creators</h1>
+    </div>
+    <div class="cret-inf">
+        <div class="cret-body">
+        <div class="cret-zoo">
+            <img src="{% static 'local/src/creatorOne.jpg' %}" class="img-not-user" alt="">
+            <h2>Lali Akhil Raj</h2>
+            <h3>Computer Science Engineer</h3>
+            <h3>IIT (BHU)</h3>
+        </div>
+        <div class="cret-zoo">
+            <img src="{% static 'local/src/creatorTwo.jpg' %}" class="img-not-user" alt="">
+            <h2>Prakhar Goyal</h2>
+            <h3>Computer Science Engineer</h3>
+            <h3>IIT (BHU)</h3>
+        </div>
+        </div>
+    </div>
+    </section>
+
+
+<!-- footer part -->
+
     <footer>
         <h5> &copy; 2020 Kechup Inc.</h5>
 
-        <a href="mailto:Lalisfeed.in@gmail.com" title="Mail us your Complaints">
+        <a href="https://Github.com/Lalisfeed/Kechup/issues/" target="_blank" title="Mail us your Complaints">
             <h4>Contact Us</h4>
         </a>
     </footer>
 
 
-    <script>
-
+    <script async>
         window.addEventListener('DOMContentLoaded', () => {
-            console.log('DOMContentLoaded')
-        })
+                document.querySelector('.page').style.display = "flex";
+                console.log('DOMContentLoaded')
+            })
         
         window.addEventListener('load', () => {
-            // document.querySelector('.page').style.display = "flex";
+             document.querySelector('.page').style.display = "none";
             console.log('loading...')
         })
+
     </script>
 </body>
 </html>
