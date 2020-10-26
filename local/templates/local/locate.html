@@ -9,12 +9,13 @@
     <title>{% block title %} {% endblock %} | Kechup</title>
     <link href="{% static 'local/locate.css' %}" rel="stylesheet">
     <link rel="shortcut icon" href="{% static 'local/src/bill.png' %}" type="image/png">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@900&display=swap" rel="stylesheet">
     {% block head %} {% endblock %}
 </head>
 
 <body>
-    <header>
+    <header data-aos="fade-in">
         <div class="logo">
             <div class="logo-1"><a href="{% url 'local:menu' %}"><h1>Kechup.</h1></a></div>
         </div>
@@ -44,6 +45,15 @@
             <div>kechup</div>
         </section>  -->
     </section>
+
+
+    <!-- Scripts for Body -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+
 </body>
 
 </html>

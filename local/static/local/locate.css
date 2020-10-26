@@ -1,7 +1,7 @@
  * {
     margin: 0px;
     padding: 0px;
-    transition: 0.2px ease-in-out;
+    transition: 0.2px ease-in;
     box-sizing: border-box;
  }
 
@@ -16,23 +16,21 @@
      text-align: center;
      background-color: #d1d1d1;
      font-family: 'Sansita Swashed', cursive;
-     animation-name: headMe;
-     animation-duration: 1s;
+     /* animation-name: headMe;
+     animation-duration: 1s; */
  }
 
-
+/* 
 @keyframes headMe {
     from {
         margin-left: -50px;
-        opacity: 0;
     }
 
     to {
         margin-left : 0px;
-        opacity: 1;
     }
 }
-
+ */
 
 
 .logo {
@@ -86,7 +84,7 @@
 
 
  .contact {
-     margin: 10px 0px;
+     margin: 20px 0px;
      font-size: small;
  }
 
@@ -99,6 +97,6 @@
     justify-content: center;
     margin-bottom: 0px;
     bottom: 0px;
-    padding: 14px 0px;
+    padding: 24px 0px;
     text-align: center;
  }
