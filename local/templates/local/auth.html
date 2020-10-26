@@ -7,6 +7,7 @@
     <title>Kechup | Easy Database & Order Management System</title>
     <link href="{% static 'local/auth.css' %}" rel="stylesheet">
     <link rel="shortcut icon" href="{% static 'local/src/bill.png' %}" type="image/png">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@900&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -24,7 +25,7 @@
 
 <!-- header part -->
 
-    <header>
+    <header data-aos="fade-in" data-aos-duration="700">
         <h1>Kechup.</h1>
     </header>
 
@@ -50,18 +51,18 @@
 <!-- Creators Path to show Info -->
 
     <section class="creators">
-    <div class="cret-meet">
+    <div class="cret-meet" data-aos="fade-in" data-aos-duration="1400">
         <h1>Meet The Creators</h1>
     </div>
     <div class="cret-inf">
-        <div class="cret-body">
-        <div class="cret-zoo">
+        <div class="cret-body" >
+        <div class="cret-zoo" data-aos="slide-right" data-aos-duration="1000">
             <img src="{% static 'local/src/creatorOne.jpg' %}" class="img-not-user" alt="">
             <h2>Lali Akhil Raj</h2>
             <h3>Computer Science Engineer</h3>
             <h3>IIT (BHU)</h3>
         </div>
-        <div class="cret-zoo">
+        <div class="cret-zoo" data-aos="slide-left" data-aos-duration="1000">
             <img src="{% static 'local/src/creatorTwo.jpg' %}" class="img-not-user" alt="">
             <h2>Prakhar Goyal</h2>
             <h3>Computer Science Engineer</h3>
@@ -77,10 +78,16 @@
     <footer>
         <h5> &copy; 2020 Kechup Inc.</h5>
 
-        <a href="https://Github.com/Lalisfeed/Kechup/issues/" target="_blank" title="Mail us your Complaints">
+        <a href="https://Github.com/Lalisfeed/Kechup/issues/" target="_blank" title="Send us your Complaints">
             <h4>Contact Us</h4>
         </a>
     </footer>
+
+<!-- All Scripts -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 
 
     <script async>
