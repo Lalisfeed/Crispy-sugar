@@ -94,6 +94,7 @@ h4 {
 .creators {
     width: 100%;
     height: auto;
+    overflow: hidden;
     background-color: #f9f7f5;
     padding: 30px 0px;
 }
