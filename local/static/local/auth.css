@@ -44,6 +44,7 @@ h2 {
 header {
     padding: 14px 0px;
     text-align: center;
+    margin-bottom: 30px;
 }
 
 
@@ -57,125 +58,340 @@ h1 {
 /* header ends */
 
 
-
-
-/* footer */
-footer {
-    color: #777;
-    padding: 14px 0px;
-    display: flex;
-    background-color: #f6f3f1;
-    flex-direction: row;
-    justify-content: space-around;
-    text-align: center;
-}
-
-footer a {
-    text-decoration: none;
-}
-
-
-footer a:hover, footer a:active, footer a:visited, a:focus {
-    color: #111;
-}
-
-
-h4 {
-    font-family: 'Sansita Swashed', cursive;
-    color: #111;
-}
-
-/* footer ends */
-
-
-
-/* Creators Section with Images, Names, Occupation and Educational  Information*/
-
-.creators {
+/* login part */
+.login-first {
     width: 100%;
-    height: auto;
     overflow: hidden;
-    background-color: #f9f7f5;
-    padding: 30px 0px;
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    background-color: #111;
 }
 
 
-.cret-meet {
+.intro-sign {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 10px;
+    flex-direction: row;
+}
+
+.intro-text {
+    flex: 2;
+    justify-content: center;
+
+}
+
+.in-form {
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    margin:  0px 10px;
+    padding: 10px;
+}
+
+.form-in {
+    width: 330px;
+    height: auto;
+    padding: 30px;
+    background: #333;
+}
+
+.form-up {
+    width: 300px;
+    display: block;
+    height: auto;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+}
+
+
+/* login ends */
+
+
+
+
+
+/* identifier */
+
+.head-call {
+    width: 100%;
+    height: 100px;
+    padding: 25px;
     text-align: center;
 }
 
-
-.cret-meet h1 {
-    color: #111;
+.head-call h1 {
     font-size: 42px;
 }
 
 
+/* signup part */
 
-.cret-inf {
+
+.signup-first {
     width: 100%;
-    min-height: 400px;
+    height: auto;
     display: flex;
     justify-content: center;
-    margin: 33px 0px 50px 0px;
-}
-
-
-.cret-body {
-    width: 67%;
-    display: flex;
-    margin: 33px 10px;
-    user-select: none;
-    flex-direction: row;
-    justify-content: space-between;
-    transition: 0.3s ease-in-out;
-}
-
-
-@media (max-width: 852px) {
-    .cret-meet h1 {
-        font-size: 36px;
-    }
-
-    .cret-body {
-        flex-direction: column;
-    }
-}
-
-.cret-zoo {
-    width: 100%;
-    min-height: 360px;
-    margin: 10px 0px 22px 0px;
-    display: block;
     align-items: center;
-    text-align: center;
+    margin: 50px 0px;
+    padding: 50px 10px;
+    padding-bottom: 100px;
 }
 
-.cret-zoo h2 {
+.form-x {
+    min-width: 360px;
+    height: auto;
     color: #333;
-    font-size: 33px;
-    padding-bottom: 10px;
-    font-family: 'Sansita Swashed', cursive;
-
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0px;
+    padding: 20px;
 }
 
-.cret-zoo h3 {
-    font-size: large;
-    color: #444;
-    padding-bottom: 10px;
+.names-x {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+/*  first name last name */
+.fame {
+    width: 150px;
+    height: 50px;
+    padding: 0px 10px;
+    font-size: 22px;
+    outline: none;
+    border: 1px solid #aaa;
+    border-radius: 2px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* mail id , password */
+.uname, .pname {
+    width: 100%;
+    height: 100%;
+    padding: 0px 10px;
+    font-size: 22px;
+    outline: none;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1px solid #aaa;
+    border-radius: 2px;
+}
+
+
+.names-e,.names-p, .names-s {
+    width: 100%;
+    height: 50px;
+    margin-bottom: 20px;
+}
+
+/*  signup */
+.subit {
+    width: 100%;
+    height: 60px;
+    cursor: pointer;
+    border-radius: 0px;
+    border-width: 0px;
+    background-color: #111;
+    color: #ededed;
+    margin-bottom: 40px;
+    padding: 0px 10px;
+    outline: none;
+    font-size: 22px;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 
+.submit:focus, .submit:hover{
+    background-color: #444;
+}
+/* signup ends */
 
-.img-not-user {
-    height: 150px;
-    width: 150px;
-    border-radius: 150px;
-    margin: 42px 0px;
-    border-style: dotted;
-    border-width: 50px;
-    border: #09aa09;
+/* advt part */
+
+.advt-igs {
+    width: 100%;
+    height: 100%;
+    margin: 100px 0px;
+    margin-bottom: 150px;
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
 }
 
-/* Completed Creator Information */
+.advt {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+@media (min-width: 1058)and(max-width:1122px){
+    .advt {
+        width: 90%;
+    }
+}
+@media (max-width:1058px) {
+    .advt-igs {
+        justify-content: space-around;
+    }
+
+    .advt {
+        width: fit-content;
+        justify-content: space-around;
+        flex-direction: column;
+    }
+}
+
+.art-on {
+    width: 300px;
+    height: auto;
+    display: block;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.art-on img {
+    width: 100%;
+    height:180px;
+} 
+
+.art-on h1 {
+    font-size: 27px;
+    margin-bottom: 10px;
+    font-weight: 800;
+    font-family:  Helvetica, sans-serif;
+}
+
+.art-on p {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* advt ends */
+
+/* creator part */
+
+
+.creators-info {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    overflow: hidden;
+    margin-bottom: 200px;
+}
+
+
+
+.cret-in {
+    width: 36%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 1000px) {
+    .creators-info {
+        flex-direction: column;
+    }
+
+    .cret-in {
+        width: 70%;
+    }
+}
+.cret-era {
+    user-select: none;
+    display: block;
+    width: 330px;
+    height: auto;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0px;
+}
+
+
+.cret-era  img{
+    width: 150px;
+    height: 150px;
+    border-radius: 150px;
+} 
+
+
+.cret-era h1 {
+    font-size: 36px;
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+
+.cret-era p {
+    font-size: medium;
+    font-weight: 400;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+/* creator ends */
+
+/* footer */
+
+.foot {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    position: relative;
+    bottom: 0;
+}
+
+.foot-bee {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+}
+
+.foot-bee-rit,.foot-bee-con {
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    align-items: center;
+    background: #333;
+    color: #ededed;
+}
+
+
+.foot-bee-rit {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 18px;
+}
+
+.foot-bee-con h3 {
+    font-family: 'Sansita Swashed', cursive;
+}
+
+.foot-bee-con a, .foot-bee-con a:hover,.foot-bee-con a:focus, .foot-bee-con a:visited, .foot-bee-con a:active {
+    text-decoration: none;
+    color: #ededed;
+}

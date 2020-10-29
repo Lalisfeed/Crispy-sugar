@@ -23,64 +23,132 @@
         </div>
     </div>
 
-<!-- header part -->
+<!-- Header Part -->
 
     <header data-aos="fade-in" data-aos-duration="700">
         <h1>Kechup.</h1>
     </header>
 
-
-<!-- content entering path -->
-
-    <section class="log-div">
-        <div class="forms">
-            <div class="form-next">
-                <form action="" method="post">
-                    {% csrf_token %}
-                    <input type="text" name="namecall" class="k-name" autocomplete="off" placeholder="Name" title="Enter Your Name" required>
-                    <input type="password" name="codecall" class="k-code" autocomplete="off" placeholder="Passcode" title="Enter Secret Code" required>
+<!-- login part -->
+    <div class="login-first"data-aos="fade-in" data-aos-duration="1000">
+        <div class="intro-sign">
+            <div class="intro-text">
+                <h1>Built For</h1>
+                <h1>Restaurants</h1>
+                <p>Manage All Your Orders stress free. We provide you with the amazing experience from editing orders
+                     to making orders. Everything here is completely for <span>free</span>.
+                </p>
             </div>
-            <div class="form-mate">
-                <input type="submit" value="Go" class="k-send">
-                </form>
+
+            <div class="in-form">
+                <div class="form-in">
+                    <div class="form-up">
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        <input type="text">
+                        <input type="text">
+                        <input type="submit" value="">
+                    </form>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
-
-
-<!-- Creators Path to show Info -->
-
-    <section class="creators">
-    <div class="cret-meet" data-aos="fade-in" data-aos-duration="1400">
-        <h1>Meet The Creators</h1>
-    </div>
-    <div class="cret-inf">
-        <div class="cret-body" >
-        <div class="cret-zoo" data-aos="slide-right" data-aos-duration="1000">
-            <img src="{% static 'local/src/creatorOne.jpg' %}" class="img-not-user" alt="">
-            <h2>Lali Akhil Raj</h2>
-            <h3>Computer Science Engineer</h3>
-            <h3>IIT (BHU)</h3>
-        </div>
-        <div class="cret-zoo" data-aos="slide-left" data-aos-duration="1000">
-            <img src="{% static 'local/src/creatorTwo.jpg' %}" class="img-not-user" alt="">
-            <h2>Prakhar Goyal</h2>
-            <h3>Computer Science Engineer</h3>
-            <h3>IIT (BHU)</h3>
-        </div>
         </div>
     </div>
-    </section>
 
 
-<!-- footer part -->
+    <!-- identification -->
+    <div class="head-call" data-aos="fade-in">
+        <h1>New User? &nbsp;Sign Up Now!</h1>
+    </div>
 
-    <footer data-aos="fade-in" data-aos-duration="1000">
-        <h5> &copy; 2020 Kechup Inc.</h5>
+    
+<!-- signup part -->
+    <div class="signup-first" data-aos="fade-in" data-aos-duration="1400">
+        <div class="form-x">
+            <form action="" method="post">
+                {% csrf_token %}
+                <div class="names-x">
+                    <input type="text" class="fame" placeholder="First Name">
+                    <input type="text" class="fame" placeholder="Last Name">
+                </div>
+                <div class="names-e">
+                    <input type="email" class="uname" placeholder="Email Id">
+                </div>
+                <div class="names-p">
+                    <input type="password" class="pname" placeholder="Set Password">
+                </div>
+                <div class="names-s">
+                    <input type="submit" value="Sign Up" class="subit">
+                </div>
+                
+            </form>
+        </div>
+    </div>
 
-        <a href="https://Github.com/Lalisfeed/Kechup/issues/" target="_blank" title="Send us your Complaints">
-            <h4>Contact Us</h4>
-        </a>
+<!-- identification -->
+<div class="head-call" data-aos="fade-in">
+    <h1>Why Kechup?</h1>
+</div>
+
+<!-- trio part -->
+    <div class="advt-igs">
+        <div class="advt">
+            <article class="art-on" data-aos="slide-right" data-aos-duration="700">
+                <img src="{% static 'local/src/Editor-In-Chief.png' %}" alt="Hero is Absent">
+                <h1>Editable Database</h1>
+                <p>Easy and Customizable Database</p>
+            </article>
+            <article class="art-on"  data-aos="fade-in" data-aos-duration="1000">
+                <img src="{% static 'local/src/Menu-In-Chief.png' %}" alt="Hero is Absent" >
+                <h1>Make Fast Orders</h1>
+                <p>No customer has to wait for more time</p>
+            </article>
+            <article class="art-on" data-aos="slide-left" data-aos-duration="700">
+                <img src="{% static 'local/src/Order-In-Chief.png' %}" alt="Hero is Absent" data-aos-duration="1000">
+                <h1>Order History</h1>
+                <p>We provide you all orders you made in the past</p>
+            </article>
+        </div>
+    </div>
+
+<!-- identification -->
+<div class="head-call" data-aos="fade-in">
+    <h1>Meet the Creators behind this.</h1>
+</div>
+
+<!-- creators part -->
+    <div class="creators-info">
+        <div class="cret-in">
+           <article class="cret-era" data-aos="slide-right"  data-aos-duration="1400">
+               <img src="{% static 'local/src/One.jpg' %}" alt="">
+               <h1>Lali Akhil Raj</h1>
+               <p>Computer Science Engineer</p>
+                <p>IIT (BHU)</p>
+           </article> 
+        </div>
+        <div class="cret-in">
+        <article class="cret-era" data-aos="slide-left"  data-aos-duration="1000">
+            <img src="{% static 'local/src/Two.jpg' %}" alt="">
+            <h1>Prakhar Goyal</h1>
+            <p>Computer Science Engineer</p>
+            <p>IIT (BHU)</p>
+        </article>
+        </div>
+    </div>
+
+<!-- Footer Part -->
+    
+    <footer class="foot" >
+        <div class="foot-bee">
+            <div class="foot-bee-rit">
+                <h5>© 2020 Kechup, Inc.</h5>
+            </div>
+            <div class="foot-bee-con">
+                <a href="https://github.com/Lalisfeed/Kechup/issues" target="_blank" title="Create Issues">
+                <h3>Contact Us</h3>
+                </a>
+            </div>
+        </div>
     </footer>
 
 <!-- All Scripts -->
@@ -92,7 +160,7 @@
 
     <script async>
         window.addEventListener('DOMContentLoaded', () => {
-                document.querySelector('.page').style.display = "flex";
+                setTimeout(function() { document.querySelector('.page').style.display = "flex";}, 3000)
                 console.log('DOMContentLoaded')
             })
         
