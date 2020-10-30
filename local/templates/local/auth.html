@@ -1,4 +1,6 @@
  {% load static %}
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,28 +33,25 @@
 
 <!-- login part -->
     <div class="login-first"data-aos="fade-in" data-aos-duration="1000">
-        <div class="intro-sign">
             <div class="intro-text">
                 <h1>Built For</h1>
                 <h1>Restaurants</h1>
-                <p>Manage All Your Orders stress free. We provide you with the amazing experience from editing orders
-                     to making orders. Everything here is completely for <span>free</span>.
+                <p>Manage All Your Orders stress free with our Restaurant Database Management System.
+                    We provide you with the amazing experience from editing menus
+                    to making orders. Everything here is completely for <span>free</span>.
                 </p>
             </div>
 
             <div class="in-form">
-                <div class="form-in">
-                    <div class="form-up">
-                    <form action="" method="post">
+                <div class="call-in">
+                    <form action="" method="post" class="form-in">
                         {% csrf_token %}
-                        <input type="text">
-                        <input type="text">
-                        <input type="submit" value="">
+                        <input type="email" class="sname" placeholder="Email">
+                        <input type="password" class="stame" placeholder="Password">
+                        <input type="submit" value="Log In" class="tname">
                     </form>
-                    </div>
                 </div>
             </div>
-        </div>
     </div>
 
 
@@ -92,7 +91,6 @@
 
 <!-- trio part -->
     <div class="advt-igs">
-        <div class="advt">
             <article class="art-on" data-aos="slide-right" data-aos-duration="700">
                 <img src="{% static 'local/src/Editor-In-Chief.png' %}" alt="Hero is Absent">
                 <h1>Editable Database</h1>
@@ -106,9 +104,8 @@
             <article class="art-on" data-aos="slide-left" data-aos-duration="700">
                 <img src="{% static 'local/src/Order-In-Chief.png' %}" alt="Hero is Absent" data-aos-duration="1000">
                 <h1>Order History</h1>
-                <p>We provide you all orders you made in the past</p>
+                <p>We present you all past orders in a amazing look</p>
             </article>
-        </div>
     </div>
 
 <!-- identification -->
@@ -160,12 +157,12 @@
 
     <script async>
         window.addEventListener('DOMContentLoaded', () => {
-                setTimeout(function() { document.querySelector('.page').style.display = "flex";}, 3000)
-                console.log('DOMContentLoaded')
+            document.querySelector('.page').style.display = "flex";
+            console.log('DOMContentLoaded')
             })
         
         window.addEventListener('load', () => {
-             document.querySelector('.page').style.display = "none";
+            document.querySelector('.page').style.display = "none";
             console.log('loading...')
         })
 
