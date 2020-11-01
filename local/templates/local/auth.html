@@ -1,6 +1,6 @@
  {% load static %}
 
-
+ {% load widget_tweaks %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,8 +46,10 @@
                 <div class="call-in">
                     <form action="" method="post" class="form-in">
                         {% csrf_token %}
-                        <input type="email" class="sname" placeholder="Email">
-                        <input type="password" class="stame" placeholder="Password">
+                        {{ loginForm.key_mail|attr:"class:sname"|attr:"placeholder:Email" }}
+                        <!-- <input type="email" class="sname" placeholder="Email"> -->
+                        {{ loginForm.key_code|attr:"placeholder:Password" }}
+                        <!-- <input type="password" class="stame" placeholder="Password"> -->
                         <input type="submit" value="Log In" class="tname">
                     </form>
                 </div>
@@ -67,14 +69,19 @@
             <form action="" method="post">
                 {% csrf_token %}
                 <div class="names-x">
-                    <input type="text" class="fame" placeholder="First Name">
-                    <input type="text" class="fame" placeholder="Last Name">
+                        {{ nextForm.keys_fname|attr:"class:fame"|attr:"placeholder:FirstName"|attr:"autocomplete:off" }}
+
+                    <!-- <input type="text" class="fame" placeholder="First Name"> -->
+                        {{ nextForm.keys_lname|attr:"class:fame"|attr:"placeholder:LastName"|attr:"autocomplete:off" }}
+                    <!-- <input type="text" class="fame" placeholder="Last Name"> -->
                 </div>
                 <div class="names-e">
-                    <input type="email" class="uname" placeholder="Email Id">
+                        {{ nextForm.keys_mail|attr:"class:uname"|attr:"placeholder:Email"|attr:"autocomplete:off" }}
+                    <!-- <input type="email" class="uname" placeholder="Email Id"> -->
                 </div>
                 <div class="names-p">
-                    <input type="password" class="pname" placeholder="Set Password">
+                        {{ nextForm.keys_code|attr:"placeholder:Set Password" }}
+                    <!-- <input type="password" class="pname" placeholder="Set Password"> -->
                 </div>
                 <div class="names-s">
                     <input type="submit" value="Sign Up" class="subit">
@@ -94,7 +101,7 @@
             <article class="art-on" data-aos="slide-right" data-aos-duration="700">
                 <img src="{% static 'local/src/Editor-In-Chief.png' %}" alt="Hero is Absent">
                 <h1>Editable Database</h1>
-                <p>Easy and Customizable Database</p>
+                <p>Easy and Customizable Database with our new features</p>
             </article>
             <article class="art-on"  data-aos="fade-in" data-aos-duration="1000">
                 <img src="{% static 'local/src/Menu-In-Chief.png' %}" alt="Hero is Absent" >
@@ -104,7 +111,7 @@
             <article class="art-on" data-aos="slide-left" data-aos-duration="700">
                 <img src="{% static 'local/src/Order-In-Chief.png' %}" alt="Hero is Absent" data-aos-duration="1000">
                 <h1>Order History</h1>
-                <p>We present you all past orders in a amazing look</p>
+                <p>We present you all your past orders in a amazing look</p>
             </article>
     </div>
 

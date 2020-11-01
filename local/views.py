@@ -7,22 +7,22 @@ from django.http import HttpResponse
 # user forms
 
 class NewLoginForm(forms.Form):
-    kay_mail = forms.EmailField(max_length=50, required=True)
-    kay_code = forms.PasswordInput()
+    key_mail = forms.EmailField(max_length=50, required=True)
+    key_code = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'stame'}))
 
 
 class NewSignUpForm(forms.Form):
-    kays_fname = forms.CharField(max_length=50, required=True)
-    kays_lname = forms.CharField(max_length=50, required=True)
-    kays_mail = forms.EmailField(max_length=50, required=True)
-    kays_code = forms.PasswordInput()
+    keys_fname = forms.CharField(max_length=50, required=True)
+    keys_lname = forms.CharField(max_length=50, required=True)
+    keys_mail = forms.EmailField(max_length=50, required=True)
+    keys_code = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'pname'}))
 
 
 # page for authentication 
 def auth(request):
     return render(request, 'local/auth.html', {
         "loginForm": NewLoginForm(),
-        "signForm": NewSignUpForm()
+        "nextForm": NewSignUpForm()
     })
 
 
