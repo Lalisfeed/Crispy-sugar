@@ -1,0 +1,14 @@
+{% extends 'local/layout.html' %}
+
+{% block body%}
+
+<div class="logout">
+    <div class="logout-txt">
+        <h1>Logged Out Successfully</h1>
+    </div>
+    <div class="website-url">
+        <a href="{% url 'local:auth' %}">Back To Website</a>
+    </div>
+</div>
+
+{% endblock %}

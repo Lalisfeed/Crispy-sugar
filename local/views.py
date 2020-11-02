@@ -1,6 +1,8 @@
 from django.shortcuts import render
+from django.urls import reverse
 from django import forms
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
+from django.contrib.auth import authenticate, login, logout
 # Create your views here.
 
 
@@ -28,22 +30,38 @@ def auth(request):
 
 # page for menu + all orders acceptance + calculate bills
 def menu(request):
+    if not request.user.is_authenticated:
+        return HttpResponseRedirect(reverse('local:auth'))
     return render(request, 'local/menu.html')
 
 
 # page for adding or deleting any items from the  owners database
 def settings(request):
+    if not request.user.is_authenticated:
+        return HttpResponseRedirect(reverse('local:auth'))
     return render(request, 'local/settings.html')
 
 
 # page for listing past orders
 def orders(request):
+    if not request.user.is_authenticated:
+        return HttpResponseRedirect(reverse('local:auth'))
     return render(request, 'local/orders.html')
 
 
 # page for viewing profile and request option for deleting account
 def profile(request):
+#     if not request.user.is_authenticated:
+#         return HttpResponseRedirect(reverse('local:auth'))
     return render(request, 'local/profill.html')
+
+
+
+# page to redirect user on logout 
+def noauth(request):
+    logout(request)
+    return render(request, "local/logout.html")
+
 
 
 # page to render when offline
