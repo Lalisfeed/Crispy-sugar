@@ -3,100 +3,101 @@
     padding: 0px;
     transition: 0.2px ease-in;
     box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
  }
 
- header {
-     width: 250px;
-     height: 100%;
-     position: fixed;
-     overflow: hidden;
+
+ .header {
+     top: 0;
+     width: 100%;
+     height: 70px;
      display: flex;
-     flex-direction: column;
-     align-items: center;
-     text-align: center;
-     background-color: #d1d1d1;
-     font-family: 'Sansita Swashed', cursive;
-     /* animation-name: headMe;
-     animation-duration: 1s; */
+     justify-content: center;
+     overflow: hidden;
+     position: absolute;
  }
 
-/* 
-@keyframes headMe {
-    from {
-        margin-left: -50px;
-    }
-
-    to {
-        margin-left : 0px;
-    }
-}
- */
-
-
-.logo {
-    width: 100%;
-    text-align: center;
-    padding: 14px 0px;
+ .bord {
+     width: 100%;
+     height: 10px;
+ }
+.head-file {
+    max-width: 1000px;
+    height: 100%;
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+    padding: 10px 10px;
 }
 
-.logo-1 {
+.logo, .but-s
+{
+    display: flex;
+    flex-direction: row;
+}
+
+
+.logo-1 a > h1 {
+    font-size: 42px;
+    font-weight: 500;
     color: #333;
-    font-size: larger;
+    font-family: 'Sansita Swashed', cursive;
 }
 
-.logo-1 a , .logo-1 a:visited ,.logo-1 a:active, .logo-1 a:focus{
+.logo-1 a {
+    text-decoration: none;
+}
+
+.logo-1 a:hover,.logo-1 a:active, .logo-1 a:visited, .logo-1 a:focus {
     color: #333;
     text-decoration: none;
 }
- .but-s {
-     height: fit-content;
-     margin: 100px 0px;
- }
 
- .buts-on {
-     width: 250px;
-     height: 52px;
- }
-
- .but-x {
-     width: 100%;
-     height: 100%;
-     border-radius: 0px;
-     border-width: 0px;
-     background: #d1d1d1;
-     outline: none !important;
-     font-size: 20px;
-     font-family: 'Sansita Swashed', cursive;
-     cursor: pointer;
- }
-
-
-
- .bord {
-     border: 1px solid #efefef;
- }
-
-  
- .but-x:hover,  .but-x:active{
-    color: #f1f1f1;
-    background: #007d00;
- }
-
-
- .contact {
-     margin: 20px 0px;
-     font-size: small;
- }
-
-
- .next-id {
-    width: 100%;
-    height: 42px;
-    position: absolute;
+.buts-on {
+    width: 75px;
+    height: 100%;
     display: flex;
     justify-content: center;
-    margin-bottom: 0px;
-    bottom: 0px;
-    padding: 24px 0px;
-    text-align: center;
- }
+    align-content: center;
+    align-items: center;
+    margin: 0px 7px;
+}
+
+.but-x, .but-xl {
+    width: 80px;
+    height: 40px;
+    border-radius: 24px;
+    border-width: 0px;
+    font-size: 14px;
+    cursor: pointer;
+    color: #777;
+    font-weight: 500;
+    outline: none;
+    background-color: #e1e1e1;
+    border: 1px solid #ddd;
+}
+
+.but-xl {
+    background-color: #333;
+    color: #ddd;
+    border: 1px solid #333;
+}
+
+.but-x:hover, .but-x:focus {
+    opacity: 0.9;
+    color: #222;
+    background-color: #aaa;
+}
+
+.but-xl:hover, .but-xl:focus, .but-xl:active {
+    opacity: 0.9;
+    border: none;
+}
+
+
+.section-xy {
+    width: 100%;
+    height: 900px;
+    padding: 10px;
+    overflow: hidden;
+}

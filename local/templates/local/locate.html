@@ -16,34 +16,24 @@
 
 <body>
     <header data-aos="fade-in">
+        <div class="head-file">
         <div class="logo">
             <div class="logo-1"><a href="{% url 'local:menu' %}"><h1>Kechup.</h1></a></div>
         </div>
         <div class="but-s">
-            <div class="buts-on"><a href="{% url 'local:menu' %}"><button class="but-x" id="x0">Menu</button></a></div>
-            <div class="buts-on"><a href="{% url 'local:orders' %}"><button class="but-x" id="x1">Orders</button></a></div>
-            <div class="buts-on"><a href="{% url 'local:settings' %}"><button class="but-x" id="x2">Settings</button></a></div>
-            <div class="buts-on"><a href="{% url 'local:profile' %}"><button class="but-x" id="x3">Profile</button></a></div>
-        </div>
-        <div class="buts-on"><a href="{% url 'local:noauth' %}"><button class="but-x">Logout</button></a></div>
-        <div class="contact">
-            <h5>Contact Us</h5>
-        </div>
-        <div class="next-id">
-                <h5> &copy; 2020 Kechup Inc.</h5>
+            <div class="buts-on"><a href="{% url 'local:menu' %}"><button class="but-x" id="x0" title="Menu">Menu</button></a></div>
+            <div class="buts-on"><a href="{% url 'local:orders' %}"><button class="but-x" id="x1" title="View Orders">Orders</button></a></div>
+            <div class="buts-on"><a href="{% url 'local:settings' %}"><button class="but-x" id="x2" title="Go to Settings">Settings</button></a></div>
+            <div class="buts-on"><a href="{% url 'local:profile' %}"><button class="but-x" id="x3" title="Your Profile">Profile</button></a></div>
+            <div class="buts-on"><a href="{% url 'local:noauth' %}"><button class="but-xl" id="x4" title="Logout">Logout</button></a></div>
         </div>
     </header>
+
     <div class="bord"></div>
     
     <section class="section-xy">
         {% block body %}
         {% endblock %}
-        <!-- <section class="section-x">
-            <div>kechup</div>
-        </section>
-        <section class="section-y">
-            <div>kechup</div>
-        </section>  -->
     </section>
 
 
