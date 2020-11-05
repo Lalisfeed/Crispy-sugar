@@ -30,15 +30,15 @@ def auth(request):
 
 # page for menu + all orders acceptance + calculate bills
 def menu(request):
-    if not request.user.is_authenticated:
-        return HttpResponseRedirect(reverse('local:auth'))
+    # if not request.user.is_authenticated:
+    #     return HttpResponseRedirect(reverse('local:auth'))
     return render(request, 'local/menu.html')
 
 
 # page for adding or deleting any items from the  owners database
 def settings(request):
-    if not request.user.is_authenticated:
-        return HttpResponseRedirect(reverse('local:auth'))
+    # if not request.user.is_authenticated:
+    #     return HttpResponseRedirect(reverse('local:auth'))
     return render(request, 'local/settings.html')
 
 
