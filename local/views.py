@@ -44,8 +44,8 @@ def settings(request):
 
 # page for listing past orders
 def orders(request):
-    if not request.user.is_authenticated:
-        return HttpResponseRedirect(reverse('local:auth'))
+    # if not request.user.is_authenticated:
+    #     return HttpResponseRedirect(reverse('local:auth'))
     return render(request, 'local/orders.html')
 
 

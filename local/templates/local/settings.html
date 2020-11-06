@@ -12,50 +12,52 @@
 
 
 <div class="settings">
-    <div class="cont-settings">
-        <div class="klabels">
-            <form action="" method="post" class="itemform-a">
-                {% csrf_token %}
-                <input type="text" name="new-label" class="new-label">
-                <input type="submit" value="Create Label" class="new-label-sbt">
-            </form>
+    <div class="settings-block">
+        <div class="stngs-form-a">
+            <div class="item-form-header">
+                <h1>Create new label</h1>
+            </div>
+            <div class="form-step">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <input type="text" class="item-text-field" placeholder="Label Name">
+                    <input type="submit" value="Create Label" class="label-sbt">
+                </form>
+            </div>
         </div>
-
-        <div class="kadd-item">
-            <div class="kadd-fst">
-            <form action="" method="post" class="itemform-b">
-                {% csrf_token %}
-                <input type="text" class="new-item">
-                <select name="ad-label" id="add-opt">
-                    <option value="">values</option>
-                </select>
+        <div class="stngs-form-b">
+            <div class="item-form-header">
+                <h1>Add items to menu</h1>
             </div>
-            <div class="kadd-snd">
-                <div>
-                <input type="radio" name="vegnon" id="veg-x" value="ve">
-                <label for="veg-x">Veg</label>
+            <div>
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <input type="text" class="item-text-field" placeholder="Item Name">
+                    <input type="number" class="item-text-field" placeholder="Item Price">
+                <div class="selection-label">
+                    <select name="" id=""></select>
                 </div>
-                <div>
-                <input type="radio" name="vegnon" id="veg-y" value="vn">
-                <label for="veg-y">Non-Veg</label>
+                <div class="vn-labels">
+                    <input type="radio" name="vegnon" id="veg-x" value="0">
+                    <label for="veg-x">Veg</label>
+                    <input type="radio" name="vegnon" id="veg-y" value="1">
+                    <label for="veg-y">Non-Veg</label>
                 </div>
+                    <input type="submit" value="Add Item" class="add-sbt">
+                </form>
             </div>
-            <div class="kadd-trd">
-                <input type="number" name="price" id="price">
-                <input type="submit" value="Add Item" class="new-item-sbt">
-            </div>
-            </form>
         </div>
-
-        <div class="kdel-item">
-            <form action="" method="post" class="itemform-c">
-                {% csrf_token %}
-                <input type="text" name="del-name" class="del-name">
-                <select name="del-label" id="del-opt">
-                    <option value="">values</option>
-                </select>
-                <input type="submit" name="delsub" class="del-item-sbt" value="Delete Item">
-            </form>
+        <div class="stngs-form-c">
+            <div class="item-form-header">
+                <h1>Delete items</h1>
+            </div>
+            <div>
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <input type="text" class="item-text-field" placeholder="Item Name">            
+                    <input type="submit" value="Delete Item" class="del-sbt">
+                </form>
+            </div>
         </div>
     </div>
 </div>

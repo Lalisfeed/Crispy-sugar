@@ -8,184 +8,84 @@
     height: 100%;
     display: flex;
     justify-content: space-around;
-    padding-top: 30px 0px;
+    margin-top: 4px ;
     overflow: hidden;
 }
 
-.cont-settings {
-    width: 330px;
-    height: auto;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-
-}
-
-
-.klabels, .kadd-item, .kdel-item {
-    width: 100%;
-    padding: 10px 0px;
-}
-
-
-
-/* form to create labels */
-.klabels {
-    min-height: 100px;
-}
-
-.itemform-a {
-    width: 100%;
-    height: fit-content;
-    display: flex;
+ .settings-block{
+     width: fit-content;
+     height: auto;
     justify-content: space-around;
-    align-items: center;
+    padding: 10px 0px 20px 0px;
     flex-direction: column;
-    padding: 10px 0px;
+ }
+
+
+.stngs-form-a,.stngs-form-b,.stngs-form-c{
+    width: 360px;
+    height: max-content;
+    margin: 20px 0px;
 }
 
-.new-label{
-    width: 300px;
-    height: 50px;
-    padding: 0px 20px;
-    font-size: 18px;
-    margin: 30px 0px;
-    border-width: 0px;
-    border-radius: 5px;
-    border: 1px solid #aaa;
-    outline: none;
-}
-
-.new-label-sbt, .new-item-sbt, .del-item-sbt {
-    width: 130px;
-    height: 45px;
-    margin-bottom: 30px;
-    border-width: 0px;
-    border-radius: 30px;
-    font-size: 16px;
-    font-weight: 500;
-    cursor: pointer;
-    color: #fff;
-    outline: none;
-    background: #008d00;
-}
-
-
-
-.kadd-item {
-    min-height: 200px;
+.item-form-header {
+    width: 100%;
+    height: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    text-align: center;
 }
 
-
-.kadd-fst ,.kadd-snd, .kadd-trd{
-    width: 100%;
-    height: auto;
-    padding: 5px 0px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.kadd-fst, .kadd-trd {
-    flex-direction: column;
-}
-
-.itemform-b {
+.form-step, form {
     width: 100%;
     height: fit-content;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
     flex-direction: column;
-    padding: 10px 0px;
-}
-
-.new-item {
-    width: 300px;
-    height: 50px;
-    border-radius: 5px;
-    border-width: 0px;
-    outline: none;
+    justify-content: center;
+    align-items: center;
+    padding: 7px 0px;
     font-size: 16px;
-    border: 1px solid #aaa;
-    font-weight: 500;
-    margin-bottom: 20px;
-    padding: 0px 20px;
 }
 
-#add-opt, #del-opt {
-    width: 200px;
+.item-text-field {
+    width: 300px;
+    height: 42px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #aaa;
+    padding: 0px 10px;
+    margin: 0px 0px 20px 0px;
+}
+
+.label-sbt, .add-sbt, .del-sbt {
+    width: 125px;
     height: 40px;
+    cursor: pointer;
+    outline: none;
+    color: #f1f1f1;
     font-size: 14px;
-    padding: 10px 10px 10px 10px;
-    border-radius: 5px;
-    outline: none;
-    background-color: #efefef;
-}
-
-
-.del-item-sbt {
-    background-color: #7d0000;
-    margin-top: 20px;
-}
-
-.kadd-snd {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin-bottom: 10px;
-}
-
- .kadd-trd {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    margin-bottom: 10px;
- }
-
- #price {
-     width: 140px;
-     height: 40px;
-     border-width: 0px;
-     border-radius: 5px;
-    border: 1px solid #aaa;
-    outline: none;
-    padding-left: 10px;
-     margin-bottom: 20px;
- }
-
-
-
-
-.kdel-item {
-    height: 300px;
-}
-
-.itemform-c {
-    width: 100%;
-    height: fit-content;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: column;
-    padding: 10px 0px;
-}
-
-
-.del-name {
-    width: 300px;
-    height: 50px ;
-    border-radius: 5px;
     border-width: 0px;
-    outline: none;
-    margin-bottom: 20px;
-    padding: 0px 20px;
-    border: 1px solid #aaa;
-    font-size: 16px;
+    border-radius: 24px;
+    background-color: #007d00;
 }
 
+.label-sbt {
+    background-color: #00a0f0;
+}
 
+.del-sbt {
+    background-color: #7d0000;
+}
+
+.selection-labels {
+    width: 140px;
+    height: 40px;
+    margin-bottom: 10px;
+}
+.vn-labels {
+    width: fit-content;
+    height: 30px;
+    margin: 16px 0px;
+}
