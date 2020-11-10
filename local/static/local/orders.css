@@ -50,3 +50,9 @@
     min-height: 200px;
     width: 300px;
 }
+
+@media (max-width: 627px) {
+    .but-s {
+        display: none;
+    }
+}

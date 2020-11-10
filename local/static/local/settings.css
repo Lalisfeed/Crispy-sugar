@@ -16,7 +16,7 @@
      width: fit-content;
      height: auto;
     justify-content: space-around;
-    padding: 10px 0px 20px 0px;
+    padding: 0px 0px 20px 0px;
     flex-direction: column;
  }
 
@@ -35,6 +35,12 @@
     align-items: center;
     text-align: center;
 }
+
+
+.item-form-header h1 {
+    user-select: none;
+}
+
 
 .form-step, form {
     width: 100%;
@@ -88,4 +94,7 @@
     width: fit-content;
     height: 30px;
     margin: 16px 0px;
+}
+.veg-x {
+    list-style: none;
 }

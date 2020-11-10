@@ -2,6 +2,7 @@
 
 {% load static %}
 
+{% load widget_tweaks %}
 
 {% block title %}Edit Database{% endblock %}
 {% block head %}
@@ -12,15 +13,16 @@
 
 
 <div class="settings">
-    <div class="settings-block">
+    <div class="settings-block" data-aos="fade-in">
         <div class="stngs-form-a">
             <div class="item-form-header">
                 <h1>Create new label</h1>
             </div>
             <div class="form-step">
-                <form action="" method="post">
+                <form action="{% url 'local:settings' %}" method="post">
                     {% csrf_token %}
-                    <input type="text" class="item-text-field" placeholder="Label Name">
+                    {{ labelForm.new_item_label|attr:"class:item-text-field"|attr:"placeholder:For ex: Pastries" }}
+                    <!-- <input type="text" class="item-text-field" placeholder="Label Name"> -->
                     <input type="submit" value="Create Label" class="label-sbt">
                 </form>
             </div>
@@ -30,18 +32,22 @@
                 <h1>Add items to menu</h1>
             </div>
             <div>
-                <form action="" method="post">
+                <form action="{% url 'local:settings' %}" method="post">
                     {% csrf_token %}
-                    <input type="text" class="item-text-field" placeholder="Item Name">
-                    <input type="number" class="item-text-field" placeholder="Item Price">
+                    {{ itemForm.new_item_name|attr:"class:item-text-field"|attr:"placeholder:For ex: Chocolate cake" }}
+                    <!-- <input type="text" class="item-text-field" placeholder="Item Name"> -->
+                    {{ itemForm.new_item_price|attr:"class:item-text-field"|attr:"placeholder:Set Item Price" }}
+                    <!-- <input type="number" class="item-text-field" placeholder="Item Price"> -->
                 <div class="selection-label">
                     <select name="" id=""></select>
                 </div>
+                    
                 <div class="vn-labels">
-                    <input type="radio" name="vegnon" id="veg-x" value="0">
+                    {{ itemForm.new_veg_label|attr:"class:veg-x" }}
+                    <!-- <input type="radio" name="vegnon" class="veg-x" value="0">
                     <label for="veg-x">Veg</label>
-                    <input type="radio" name="vegnon" id="veg-y" value="1">
-                    <label for="veg-y">Non-Veg</label>
+                    <input type="radio" name="vegnon" class="veg-y"  value="1">
+                    <label for="veg-y">Non-Veg</label> -->
                 </div>
                     <input type="submit" value="Add Item" class="add-sbt">
                 </form>
@@ -52,9 +58,10 @@
                 <h1>Delete items</h1>
             </div>
             <div>
-                <form action="" method="post">
+                <form action="{% url 'local:settings' %}" method="post">
                     {% csrf_token %}
-                    <input type="text" class="item-text-field" placeholder="Item Name">            
+                    {{ delForm.del_item_name|attr:"class:item-text-field"|attr:"placeholder:Item to Delete" }}
+                    <!-- <input type="text" class="item-text-field" placeholder="Item Name">             -->
                     <input type="submit" value="Delete Item" class="del-sbt">
                 </form>
             </div>
