@@ -3,6 +3,7 @@ from django.urls import reverse
 from django import forms
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth import authenticate, login, logout
+from .models import Newitem, Newlabel, Userslist
 # Create your views here.
 
 
@@ -41,6 +42,8 @@ class NewDeleteField(forms.Form):
 
 # page for authentication 
 def auth(request):
+    # if request.method == "POST":
+
     return render(request, 'local/auth.html', {
         "loginForm": NewLoginForm(),
         "nextForm": NewSignUpForm()
@@ -59,9 +62,53 @@ def settings(request):
     # if not request.user.is_authenticated:
     #     return HttpResponseRedirect(reverse('local:auth'))
 
+    if request.method == "POST":
+        if request.POST.get('new_item_label'):
+            save_label = Newlabel()
+            label_options = Newlabel.objects.all()
+            save_label.label_name = request.POST['new_item_label']
+            save_label.save()
+            return render(request, 'local/settings.html', {
+                "labelForm": NewLabelField(),
+                "itemForm": NewItemField(),
+                "select_label": label_options,
+                "delForm": NewDeleteField(),
+            })
+
+        if request.POST.get('new_item_name'):
+            save_item = Newitem()
+            save_item.item_name = request.POST['new_item_name']
+            save_item.item_price = request.POST['new_item_price']
+            save_item.save()
+            return render(request, 'local/settings.html', {
+                "labelForm": NewLabelField(),
+                "itemForm": NewItemField(),
+                "select_label": Newlabel.objects.all(),
+                "delForm": NewDeleteField(),
+            })
+
+        if request.POST.get('del_item_name'):
+            del_item = NewDeleteField()
+            del_item.del_item_name = request.POST['del_item_name']
+            Newitem.objects.filter(item_name=del_item).delete()
+            return render(request, 'local/settings.html', {
+                "labelForm": NewLabelField(),
+                "itemForm": NewItemField(),
+                "select_label": Newlabel.objects.all(),
+                "delForm": NewDeleteField(),
+            })
+    else :  
+        return render(request, 'local/settings.html', {
+            "labelForm": NewLabelField(),
+            "itemForm": NewItemField(),
+            "select_label": Newlabel.objects.all(),
+            "delForm": NewDeleteField(),
+        })
+    
     return render(request, 'local/settings.html', {
         "labelForm": NewLabelField(),
         "itemForm": NewItemField(),
+        "select_label": Newlabel.objects.all(),
         "delForm": NewDeleteField(),
     })
 
