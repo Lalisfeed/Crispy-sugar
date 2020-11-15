@@ -2,9 +2,12 @@ from django.db import models
 
 # # Create your models here.
 class Userslist(models.Model):
-    first_name = models.CharField(max_length=64)
-    last_name = models.CharField(max_length=64)
-    email_name = models.EmailField()
+    # Userslist with this Email name already exists.
+    email_name = models.EmailField(unique=True)
+    first_name = models.CharField(max_length=64, default=None)
+    last_name = models.CharField(max_length=64, default=None)
+    pass_code = models.CharField(max_length=256, default=None)
+
 
 class Newlabel(models.Model):
     label_name = models.CharField(max_length=64)

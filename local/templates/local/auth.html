@@ -59,37 +59,10 @@
 
     <!-- identification -->
     <div class="head-call" data-aos="fade-in">
-        <h1>New User? &nbsp;Sign Up Now!</h1>
+        <h1>New User? &nbsp; <a href="{% url 'local:new' %}" ><span class="sign-up-dear">Sign Up</span></a> Now!</h1>
     </div>
 
     
-<!-- signup part -->
-    <div class="signup-first" data-aos="fade-in" data-aos-duration="1400">
-        <div class="form-x">
-            <form action="" method="post">
-                {% csrf_token %}
-                <div class="names-x">
-                        {{ nextForm.keys_fname|attr:"class:fame"|attr:"placeholder:FirstName"|attr:"autocomplete:off" }}
-
-                    <!-- <input type="text" class="fame" placeholder="First Name"> -->
-                        {{ nextForm.keys_lname|attr:"class:fame"|attr:"placeholder:LastName"|attr:"autocomplete:off" }}
-                    <!-- <input type="text" class="fame" placeholder="Last Name"> -->
-                </div>
-                <div class="names-e">
-                        {{ nextForm.keys_mail|attr:"class:uname"|attr:"placeholder:Email"|attr:"autocomplete:off" }}
-                    <!-- <input type="email" class="uname" placeholder="Email Id"> -->
-                </div>
-                <div class="names-p">
-                        {{ nextForm.keys_code|attr:"placeholder:Set Password" }}
-                    <!-- <input type="password" class="pname" placeholder="Set Password"> -->
-                </div>
-                <div class="names-s">
-                    <input type="submit" value="Sign Up" class="subit">
-                </div>
-                
-            </form>
-        </div>
-    </div>
 
 <!-- identification -->
 <div class="head-call" data-aos="fade-in">

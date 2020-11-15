@@ -1,9 +1,12 @@
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 from django.shortcuts import render
 from django.urls import reverse
 from django import forms
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth import authenticate, login, logout
 from .models import Newitem, Newlabel, Userslist
+from passlib.hash import pbkdf2_sha256
 # Create your views here.
 
 
@@ -14,11 +17,15 @@ class NewLoginForm(forms.Form):
     key_code = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'stame'}))
 
 
-class NewSignUpForm(forms.Form):
-    keys_fname = forms.CharField(max_length=64, required=True)
-    keys_lname = forms.CharField(max_length=64, required=True)
-    keys_mail = forms.EmailField(max_length=128, required=True)
-    keys_code = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'pname'}))
+class NewSignUpForm(UserCreationForm):
+    class Meta:
+        model = User
+        fields = ["first_name", "last_name","username", "email", "password1", "password2"]
+        
+    # keys_fname = forms.CharField(max_length=64, required=True)
+    # keys_lname = forms.CharField(max_length=64, required=True)
+    # keys_mail = forms.EmailField(max_length=128, required=True)
+    # keys_code = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'pname'}))
 
 
 class NewLabelField(forms.Form):
@@ -41,14 +48,31 @@ class NewDeleteField(forms.Form):
 
 
 # page for authentication 
-def auth(request):
-    # if request.method == "POST":
+def new(response):
+    if response.method == "POST":
+        form = NewSignUpForm(response.POST)
+        if form.is_valid():
+            form.save()
+            return render(response, 'local/new.html', {
+                'nextForm': form,
+                # 'good': 'gooood'
 
+            })
+    else:
+        form = NewSignUpForm()
+
+    return render(response, 'local/new.html', {
+        'nextForm': form,
+        })
+
+# page for authentication
+def auth(request):
+    inform = NewLoginForm()
+    if request.method == "POST":
+        pass
     return render(request, 'local/auth.html', {
         "loginForm": NewLoginForm(),
-        "nextForm": NewSignUpForm()
     })
-
 
 # page for menu + all orders acceptance + calculate bills
 def menu(request):
