@@ -13,7 +13,7 @@ from passlib.hash import pbkdf2_sha256
 # user forms
 
 class NewLoginForm(forms.Form):
-    key_mail = forms.EmailField(max_length=128, required=True)
+    key_mail = forms.CharField(max_length=128, required=True)
     key_code = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'stame'}))
 
 
@@ -54,37 +54,52 @@ def new(response):
         if form.is_valid():
             form.save()
             return render(response, 'local/new.html', {
+                'nextForm': form.cleaned_data ,
+                'good': 'Signed Up Successfully'
+            })
+        else:
+            return render(response, 'local/new.html', {
                 'nextForm': form,
-                # 'good': 'gooood'
-
+                'false_data': 'Invalid Data'
             })
     else:
         form = NewSignUpForm()
-
     return render(response, 'local/new.html', {
-        'nextForm': form,
+        'nextForm': form
         })
 
 # page for authentication
 def auth(request):
-    inform = NewLoginForm()
     if request.method == "POST":
-        pass
+        usermail = request.POST["key_mail"]
+        passcode = request.POST["key_code"]
+
+        user = authenticate(request, username=usermail, password=passcode)
+
+        if user is not None:
+            login(request, user)
+            return HttpResponseRedirect("local:menu")
+        else:
+            return render(request, "local/auth.html", {
+                "loginForm": NewLoginForm(),
+                "message": "Invalid Credentials"
+            })
+        
     return render(request, 'local/auth.html', {
         "loginForm": NewLoginForm(),
     })
 
 # page for menu + all orders acceptance + calculate bills
 def menu(request):
-    # if not request.user.is_authenticated:
-    #     return HttpResponseRedirect(reverse('local:auth'))
+    if not request.user.is_authenticated:
+        return HttpResponseRedirect(reverse('local:auth'))
     return render(request, 'local/menu.html')
 
 
 # page for adding or deleting any items from the  owners database
 def settings(request):
-    # if not request.user.is_authenticated:
-    #     return HttpResponseRedirect(reverse('local:auth'))
+    if not request.user.is_authenticated:
+        return HttpResponseRedirect(reverse('local:auth'))
 
     if request.method == "POST":
         if request.POST.get('new_item_label'):
@@ -111,7 +126,7 @@ def settings(request):
                 "delForm": NewDeleteField(),
             })
 
-        if request.POST.get('del_item_name'):
+        if request.POST.get('del_item_name'): # still checking
             del_item = NewDeleteField()
             del_item.del_item_name = request.POST['del_item_name']
             Newitem.objects.filter(item_name=del_item).delete()
@@ -139,15 +154,15 @@ def settings(request):
 
 # page for listing past orders
 def orders(request):
-    # if not request.user.is_authenticated:
-    #     return HttpResponseRedirect(reverse('local:auth'))
+    if not request.user.is_authenticated:
+        return HttpResponseRedirect(reverse('local:auth'))
     return render(request, 'local/orders.html')
 
 
 # page for viewing profile and request option for deleting account
 def profile(request):
-#     if not request.user.is_authenticated:
-#         return HttpResponseRedirect(reverse('local:auth'))
+    if not request.user.is_authenticated:
+        return HttpResponseRedirect(reverse('local:auth'))
     return render(request, 'local/profill.html')
 
 
