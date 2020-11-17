@@ -13,43 +13,46 @@
 </head>
 <body>
     <div class="center-up">
-<!-- signup part -->
-<div class="signup-first" >
-    <div class="form-x">
-        <form action="{% url 'local:new' %}" method="post">
-            {% csrf_token %}
-            <div class="names-x">
-                {{ nextForm.first_name|attr:"class:fame"|attr:"placeholder:FirstName"|attr:"autocomplete:off" }}
-
-                <!-- <input type="text" class="fame" placeholder="First Name"> -->
-                {{ nextForm.last_name|attr:"class:fame"|attr:"placeholder:LastName"|attr:"autocomplete:off" }}
-                <!-- <input type="text" class="fame" placeholder="Last Name"> -->
-            </div>
-            <div class="names-e">
-                {{ nextForm.username|attr:"class:uname"|attr:"placeholder:create Username"|attr:"autocomplete:off" }}
-                <!-- <input type="email" class="uname" placeholder="Email Id"> -->
-            </div>
-            <div class="names-e">
-                {{ nextForm.email|attr:"class:uname"|attr:"placeholder:Email"|attr:"autocomplete:off" }}
-                <!-- <input type="email" class="uname" placeholder="Email Id"> -->
-            </div>
-            <div class="names-p">
-                {{ nextForm.password1|attr:"class:pname"|attr:"placeholder:Set Password" }}
+        <!-- signup part -->
+        <div class="signup-first" >
+            <div class="form-x">
+                <form action="{% url 'local:new' %}" method="post">
+                    {% csrf_token %}
+                    <div class="names-e">
+                        {{ nextForm.username|attr:"class:uname"|attr:"placeholder:create Username"|attr:"autocomplete:off" }}
+                    <!-- <input type="email" class="uname" placeholder="Email Id"> -->
+                    </div>
+                    <div class="names-x">
+                        {{ nextForm.first_name|attr:"class:fame"|attr:"placeholder:FirstName"|attr:"autocomplete:off" }}
+            
+                    <!-- <input type="text" class="fame" placeholder="First Name"> -->
+                        {{ nextForm.last_name|attr:"class:fame"|attr:"placeholder:LastName"|attr:"autocomplete:off" }}
+                        <!-- <input type="text" class="fame" placeholder="Last Name"> -->
+                    </div>
+                    <div class="names-e">
+                        {{ nextForm.email|attr:"class:uname"|attr:"placeholder:Email"|attr:"autocomplete:off" }}
+                    <!-- <input type="email" class="uname" placeholder="Email Id"> -->
+                    </div>
+                    <div class="names-p">
+                        {{ nextForm.password1|attr:"class:pname"|attr:"placeholder:Set Password" }}
+                    <!-- <input type="password" class="pname" placeholder="Set Password"> -->
+                    </div>
+                    <div class="names-p">
+                        {{ nextForm.password2|attr:"class:pname"|attr:"placeholder:Confirm Password" }}
                 <!-- <input type="password" class="pname" placeholder="Set Password"> -->
+                    </div>
+                    <div class="names-s">
+                        <input type="submit" value="Sign Up" class="subit">
+                    </div>
+                </form>
             </div>
-            <div class="names-p">
-                {{ nextForm.password2|attr:"class:pname"|attr:"placeholder:Confirm Password" }}
-                <!-- <input type="password" class="pname" placeholder="Set Password"> -->
-            </div>
-            <div class="names-s">
-                <input type="submit" value="Sign Up" class="subit">
-            </div>
-        </form>
+        </div>
     </div>
-</div>
-    {% if good %}
+    <div class="sign-up-message">
+        {% if good %}
         {{good}}
-    {% endif %}
+        <a href="{% url 'local:auth' %}">Back To Website</a>
+        {% endif %}
     </div>
 </body>
 </html>

@@ -48,28 +48,32 @@ class NewDeleteField(forms.Form):
 
 
 # page for authentication 
-def new(response):
-    if response.method == "POST":
-        form = NewSignUpForm(response.POST)
+def new(request):
+    if request.user.is_authenticated:
+        return HttpResponseRedirect("menu/")
+    if request.method == "POST":
+        form = NewSignUpForm(request.POST)
         if form.is_valid():
             form.save()
-            return render(response, 'local/new.html', {
-                'nextForm': form.cleaned_data ,
+            return render(request, 'local/new.html', {
+                'nextForm': NewSignUpForm(),
                 'good': 'Signed Up Successfully'
             })
         else:
-            return render(response, 'local/new.html', {
+            return render(request, 'local/new.html', {
                 'nextForm': form,
                 'false_data': 'Invalid Data'
             })
     else:
         form = NewSignUpForm()
-    return render(response, 'local/new.html', {
+    return render(request, 'local/new.html', {
         'nextForm': form
         })
 
 # page for authentication
 def auth(request):
+    if request.user.is_authenticated:
+        return HttpResponseRedirect("menu/")
     if request.method == "POST":
         usermail = request.POST["key_mail"]
         passcode = request.POST["key_code"]
@@ -78,7 +82,9 @@ def auth(request):
 
         if user is not None:
             login(request, user)
-            return HttpResponseRedirect("local:menu")
+            return render(request, "local/menu.html", {
+                "user":user
+            })
         else:
             return render(request, "local/auth.html", {
                 "loginForm": NewLoginForm(),
@@ -170,6 +176,8 @@ def profile(request):
 # page to redirect user on logout 
 def noauth(request):
     logout(request)
+    if request.user.is_authenticated:
+        return HttpResponseRedirect(reverse('local:auth'))
     return render(request, "local/logout.html")
 
 

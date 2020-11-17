@@ -51,7 +51,7 @@
                 <div class="call-in">
                     <form action="" method="post" class="form-in">
                         {% csrf_token %}
-                        {{ loginForm.key_mail|attr:"class:sname"|attr:"placeholder:Email" }}
+                        {{ loginForm.key_mail|attr:"class:sname"|attr:"placeholder:Username" }}
                         <!-- <input type="email" class="sname" placeholder="Email"> -->
                         {{ loginForm.key_code|attr:"placeholder:Password" }}
                         <!-- <input type="password" class="stame" placeholder="Password"> -->
@@ -64,7 +64,7 @@
 
     <!-- identification -->
     <div class="head-call" data-aos="fade-in">
-        <h1>New User? &nbsp; <a href="{% url 'local:new' %}" ><span class="sign-up-dear">Sign Up</span></a> Now!</h1>
+        <h1>New User? &nbsp; <a href="{% url 'local:new' %}" >Sign Up</a> Now!</h1>
     </div>
 
     
@@ -81,7 +81,7 @@
                 <h1>Editable Database</h1>
                 <p>Easy and Customizable Database with our new features</p>
             </article>
-            <article class="art-on"  data-aos="fade-in" data-aos-duration="1000">
+            <article class="art-on"  data-aos="fade-up" data-aos-duration="1000">
                 <img src="{% static 'local/src/Menu-In-Chief.png' %}" alt="Hero is Absent" >
                 <h1>Make Fast Orders</h1>
                 <p>No customer has to wait for more time</p>
