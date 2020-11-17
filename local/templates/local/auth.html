@@ -31,11 +31,12 @@
         <h1>Kechup.</h1>
     </header>
 
-    <p text-align="center">
+    <div style="text-align: center; color: #d40000;font-size: 20px;"  data-aos="flip-up" data-aos-duration="300">
         {% if message %}
-            {{message}}
+            *{{message}}*
         {% endif %}
-    </p>
+    </div>
+
 <!-- login part -->
     <div class="login-first" data-aos="fade-in" data-aos-duration="1000">
             <div class="intro-text">
@@ -46,7 +47,7 @@
                     to making orders. Everything here is completely for <span>free</span>.
                 </p>
             </div>
-
+        
             <div class="in-form">
                 <div class="call-in">
                     <form action="" method="post" class="form-in">

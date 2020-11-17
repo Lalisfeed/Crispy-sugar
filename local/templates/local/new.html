@@ -12,6 +12,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@900&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="sign-up-message" style="text-align: center;font-size: 20px;" data-aos="flip-up" data-aos-duration="300">
+        {% if good %}
+        {{good}}
+        <a href="{% url 'local:auth' %}">Go Back To Website</a>
+        {% endif %}
+    </div>
+
+    <div style="text-align: center; color: #d40000;font-size: 20px;" data-aos="flip-up" data-aos-duration="300">
+        {% if incorrect %}
+        *{{ incorrect }}*
+        {% endif %}
+    </div>
+
     <div class="center-up">
         <!-- signup part -->
         <div class="signup-first" >
@@ -47,12 +60,6 @@
                 </form>
             </div>
         </div>
-    </div>
-    <div class="sign-up-message">
-        {% if good %}
-        {{good}}
-        <a href="{% url 'local:auth' %}">Back To Website</a>
-        {% endif %}
     </div>
 </body>
 </html>

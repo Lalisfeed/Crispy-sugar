@@ -50,7 +50,7 @@ class NewDeleteField(forms.Form):
 # page for authentication 
 def new(request):
     if request.user.is_authenticated:
-        return HttpResponseRedirect("menu/")
+        return HttpResponseRedirect(reverse("local:menu"))
     if request.method == "POST":
         form = NewSignUpForm(request.POST)
         if form.is_valid():
@@ -62,7 +62,7 @@ def new(request):
         else:
             return render(request, 'local/new.html', {
                 'nextForm': form,
-                'false_data': 'Invalid Data'
+                'incorrect': 'Enter a valid Email and set a Strong Password'
             })
     else:
         form = NewSignUpForm()
