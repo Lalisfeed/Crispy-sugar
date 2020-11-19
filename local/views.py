@@ -5,7 +5,7 @@ from django.urls import reverse
 from django import forms
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth import authenticate, login, logout
-from .models import Newitem, Newlabel, Userslist
+from .models import Newitem, Newlabel
 from passlib.hash import pbkdf2_sha256
 # Create your views here.
 
