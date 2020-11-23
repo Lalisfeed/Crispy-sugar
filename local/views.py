@@ -10,41 +10,7 @@ from passlib.hash import pbkdf2_sha256
 # Create your views here.
 
 
-# user forms
-
-class NewLoginForm(forms.Form):
-    key_mail = forms.CharField(max_length=128, required=True)
-    key_code = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'stame'}))
-
-
-class NewSignUpForm(UserCreationForm):
-    class Meta:
-        model = User
-        fields = ["first_name", "last_name","username", "email", "password1", "password2"]
-        
-    # keys_fname = forms.CharField(max_length=64, required=True)
-    # keys_lname = forms.CharField(max_length=64, required=True)
-    # keys_mail = forms.EmailField(max_length=128, required=True)
-    # keys_code = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'pname'}))
-
-
-class NewLabelField(forms.Form):
-    new_item_label = forms.CharField(max_length=32, required=True)
-
-# labels and choices for new item field
-Veg_choices = [('0', 'Veg'),
-               ('1', 'Non-veg')]
- 
-class NewItemField(forms.Form):
-    new_item_name = forms.CharField(max_length=64, required=True)
-    new_item_price = forms.IntegerField(min_value=0, max_value=100000, required=True)
-    new_item_label = forms.Select()
-    new_veg_label = forms.ChoiceField(
-        choices=Veg_choices, widget=forms.RadioSelect())
-
-
-class NewDeleteField(forms.Form):
-    del_item_name = forms.CharField(max_length=64, required=True)
+from .forms import NewSignUpForm, NewLoginForm, NewLabelField, NewItemField, NewDeleteField
 
 
 # page for authentication 
@@ -99,7 +65,15 @@ def auth(request):
 def menu(request):
     if not request.user.is_authenticated:
         return HttpResponseRedirect(reverse('local:auth'))
-    return render(request, 'local/menu.html')
+
+    labels = Newlabel.objects.all().order_by('label_name')
+    items= Newitem.objects.all().order_by('item_name')
+    return render(request, 'local/menu.html', {
+        'labels': labels,
+        'items': items,
+        'x': int(1),
+    }
+    )
 
 
 # page for adding or deleting any items from the  owners database
@@ -123,6 +97,7 @@ def settings(request):
         if request.POST.get('new_item_name'):
             save_item = Newitem()
             save_item.item_name = request.POST['new_item_name']
+            save_item.item_label = request.POST['selected_label']
             save_item.item_price = request.POST['new_item_price']
             save_item.save()
             return render(request, 'local/settings.html', {

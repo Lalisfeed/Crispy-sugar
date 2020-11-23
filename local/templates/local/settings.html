@@ -39,9 +39,9 @@
                     {{ itemForm.new_item_price|attr:"class:item-text-field"|attr:"placeholder:Set Item Price" }}
                     <!-- <input type="number" class="item-text-field" placeholder="Item Price"> -->
                 <div class="selection-label">
-                    <select>
+                    <select  name= "{{selected_label}}"class="selected_label">
                     {% for label in select_label %}
-                        <option name="{{ label.id }}" id="">{{ label.label_name }}</option>
+                        <option name="{{ label.id }}" value="{{ label.label_name }}" id="">{{ label.label_name }}</option>
                     {% empty %}
                         <option name="none">None</option>
                     {% endfor %}

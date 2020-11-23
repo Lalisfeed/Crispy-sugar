@@ -9,11 +9,34 @@
 {% endblock %}
 
 {% block body %}
-
-<!-- <section class="section-x">
-    <div>kechup</div>
-</section>
-<section class="section-y">
-    <div>kechup</div>
-</section> -->
+    <div class="menu-body">
+        <div class="menu-head">
+            <h1>Menu</h1>
+        </div>
+        <div class="label-data">
+            {% for label in labels %}
+            <table>
+            <h1>{{label}}</h1>
+                <tr>
+                    <th>Item</th>
+                    <th>Type</th>
+                    <th>Price</th>
+                </tr>
+                {% for item in items %} 
+                <tr>
+                    <td>
+                        {{ item.item_name }}
+                    </td>
+                    <td>
+                        {{ item.item_type }}
+                    </td>
+                    <td>
+                        {{ item.item_price }}
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}
