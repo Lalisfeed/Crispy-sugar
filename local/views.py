@@ -84,7 +84,8 @@ def settings(request):
     if request.method == "POST":
         if request.POST.get('new_item_label'):
             save_label = Newlabel()
-            label_options = Newlabel.objects.all()
+            label_options = Newlabel.objects.filter(label_home=request.user)
+            save_label.label_home = request.user
             save_label.label_name = request.POST['new_item_label']
             save_label.save()
             return render(request, 'local/settings.html', {
@@ -96,39 +97,40 @@ def settings(request):
 
         if request.POST.get('new_item_name'):
             save_item = Newitem()
+            save_item.item_womb = request.user
             save_item.item_name = request.POST['new_item_name']
-            save_item.item_label = request.POST['selected_label']
+            # save_item.item_label = request.POST['selected_label']
             save_item.item_price = request.POST['new_item_price']
             save_item.save()
             return render(request, 'local/settings.html', {
                 "labelForm": NewLabelField(),
                 "itemForm": NewItemField(),
-                "select_label": Newlabel.objects.all(),
+                "select_label": Newlabel.objects.filter(label_home=request.user),
                 "delForm": NewDeleteField(),
             })
 
         if request.POST.get('del_item_name'): # still checking
             del_item = NewDeleteField()
             del_item.del_item_name = request.POST['del_item_name']
-            Newitem.objects.filter(item_name=del_item).delete()
+            Newitem.objects.filter(item_name=del_item,item_womb=request.user).delete()
             return render(request, 'local/settings.html', {
                 "labelForm": NewLabelField(),
                 "itemForm": NewItemField(),
-                "select_label": Newlabel.objects.all(),
+                "select_label": Newlabel.objects.filter(label_home = request.user),
                 "delForm": NewDeleteField(),
             })
     else :  
         return render(request, 'local/settings.html', {
             "labelForm": NewLabelField(),
             "itemForm": NewItemField(),
-            "select_label": Newlabel.objects.all(),
+            "select_label": Newlabel.objects.filter(label_home=request.user),
             "delForm": NewDeleteField(),
         })
     
     return render(request, 'local/settings.html', {
         "labelForm": NewLabelField(),
         "itemForm": NewItemField(),
-        "select_label": Newlabel.objects.all(),
+        "select_label": Newlabel.objects.filter(label_home=request.user),
         "delForm": NewDeleteField(),
     })
 
