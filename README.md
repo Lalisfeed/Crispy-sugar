@@ -1,4 +1,4 @@
-<h1 align="center" style="font-family:Sansita Swashed, cusive;font-size:10vw;">Kechup</h1>
+<h1 align="center" style="font-family:Sansita Swashed;font-size:10vw;">Kechup</h1>
 
 <img align="right" src="https://img.shields.io/github/last-commit/Lalisfeed/Crispy-sugar" />
 
