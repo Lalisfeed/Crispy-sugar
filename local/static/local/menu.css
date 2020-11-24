@@ -21,7 +21,18 @@
     justify-content: center;
     flex-direction: column;
 }
-
+.label-data {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+}
+.label-dt {
+    max-width: 1000px;
+    height: auto;
+    display: block;
+    border: 1px solid #bcbcbc; 
+    border-radius: 10px;
+}
 .menu-head {
     display: block;
     text-align: center;
@@ -39,21 +50,25 @@
     justify-content: space-around;
     flex-direction: row;
     margin: 10px 0px;
-    max-width: 900px;
+
 }
 
 
-.label--name {
+.label--name, .label--name-data {
     display: flex;
     justify-content: space-around;
-    flex-direction: row;  
+    flex-direction: row; 
 }
 
 .label-tab {
+    flex: 1;
     padding: 10px;
+    text-align: center;
 }
 
 .item-fem {
+    flex:1;
     font-size: large;
     padding: 5px;
+    text-align: center;
 }

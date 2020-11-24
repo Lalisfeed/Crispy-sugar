@@ -17,6 +17,7 @@
                 <h1>Menu</h1>
             </div>
             <div class="label-data">
+                <div class="label-dt">
                 {% for label in labels %}
                 <table class="table-head">
                     <div class="table-label">
@@ -28,25 +29,31 @@
                         <div class="label-tab"><h2>Price</h2></div>
                     </div>
                     {% for item in items %} 
-                    <div class="label--name">
-                    {% if item.item_label == label.label_name%}
-                        <div class="item-fem">
-                            {{ item.item_name }}
+                        <div class="label--name-data">
+                        {% if item.item_label == label.label_name%}
+                            <div class="item-fem">
+                                {{ item.item_name }}
+                            </div>
+                            <div class="item-fem">
+                                {{ item.item_type }}
+                            </div>
+                            <div class="item-fem">
+                                {{ item.item_price }}
+                            </div>
+                        {% endif %}
                         </div>
-                        <div class="item-fem">
-                            {{ item.item_type }}
-                        </div>
-                        <div class="item-fem">
-                            {{ item.item_price }}
-                        </div>
-                        {% comment %} <div>
-                            No Items Here.
-                        </div> {% endcomment %}
-                    {% endif %}
-                    </div>
+                    {% empty %}
+                        <center>
+                            <h2>No Items Here</h2>
+                        </center>
                     {% endfor %}
                 </table>
+                {% empty %}
+                <center>
+                        <h2>No Items are Here</h2>
+                </center>
                 {% endfor %}
+                </div>
             </div>
         </div>
     </div>
