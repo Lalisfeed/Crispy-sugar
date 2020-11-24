@@ -66,8 +66,8 @@ def menu(request):
     if not request.user.is_authenticated:
         return HttpResponseRedirect(reverse('local:auth'))
 
-    labels = Newlabel.objects.all().order_by('label_name')
-    items= Newitem.objects.all().order_by('item_name')
+    labels = Newlabel.objects.filter(label_home=request.user)
+    items= Newitem.objects.filter(item_womb=request.user)
     return render(request, 'local/menu.html', {
         'labels': labels,
         'items': items,
@@ -99,8 +99,9 @@ def settings(request):
             save_item = Newitem()
             save_item.item_womb = request.user
             save_item.item_name = request.POST['new_item_name']
-            # save_item.item_label = request.POST['selected_label']
+            save_item.item_label = request.POST['selected_label']
             save_item.item_price = request.POST['new_item_price']
+            save_item.item_type = request.POST['new_veg_label']
             save_item.save()
             return render(request, 'local/settings.html', {
                 "labelForm": NewLabelField(),
@@ -112,7 +113,7 @@ def settings(request):
         if request.POST.get('del_item_name'): # still checking
             del_item = NewDeleteField()
             del_item.del_item_name = request.POST['del_item_name']
-            Newitem.objects.filter(item_name=del_item,item_womb=request.user).delete()
+            Newitem.objects.get(item_name=del_item.del_item_name, item_womb=request.user).delete()
             return render(request, 'local/settings.html', {
                 "labelForm": NewLabelField(),
                 "itemForm": NewItemField(),
@@ -146,7 +147,9 @@ def orders(request):
 def profile(request):
     if not request.user.is_authenticated:
         return HttpResponseRedirect(reverse('local:auth'))
-    return render(request, 'local/profill.html')
+    return render(request, 'local/profill.html', {
+        "user": request.user,
+    })
 
 
 

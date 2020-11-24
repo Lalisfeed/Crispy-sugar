@@ -10,14 +10,16 @@ class Newlabel(models.Model):
     def __str__(self):
         return f"{self.label_name}"
 
+
 class Newitem(models.Model):
-    Veg_choices = [('Veg', 'Veg'),
-                   ('Non-Veg', 'Non-Veg')]
     item_womb = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     item_name = models.CharField(max_length=64, unique=True)
-    item_label = models.ForeignKey(Newlabel, on_delete=models.CASCADE, null=True)
-    item_type = models.CharField(max_length=30,choices=Veg_choices,null=True)
+    item_label = models.CharField(max_length=64,null=True)
+    item_type = models.CharField(max_length=30,null=True)
     item_price = models.PositiveIntegerField(null=True)
 
     def __str__(self):
         return f"{self.item_name}"
+
+    # Veg_choices = [('Veg', 'Veg'),
+    #                ('Non-Veg', 'Non-Veg')]

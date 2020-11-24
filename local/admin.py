@@ -9,7 +9,7 @@ class NewLabelAdmin(admin.ModelAdmin):
 
 
 class NewItemAdmin(admin.ModelAdmin):
-    list_display = ("id", "item_name", "item_label", "item_type", "item_price")
+    list_display = ("id", "item_womb", "item_name", "item_label", "item_type", "item_price")
 
 
 admin.site.register(Newitem, NewItemAdmin)

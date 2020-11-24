@@ -2,3 +2,24 @@
     color: #f1f1f1;
     background: #007d00;
 }
+
+.profile-need {
+    width: 100%;
+    height: auto;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.profile-ned {
+    width: 300px;
+    height: auto;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
