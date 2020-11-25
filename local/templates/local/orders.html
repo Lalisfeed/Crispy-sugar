@@ -10,33 +10,57 @@
 
 {% block body %}
 
+<div class="new-ord">
+    <div class="new-btn">
+        <a href="{% url 'local:neworder' %}"><button class="new-ord-btn">+ Create Order</button></a>
+    </div>
+    <div class="sep-line"></div>
+    <div class="new-name">
+        <h1>Past Orders</h1>
+    </div>
+    <div class="new-list">
+    {% comment %} repetion tabs {% endcomment %}
+        <div class="order-min">
+            <h2>Order ID</h2>
+            <div class="sep-line-div"></div>
+            <div class="ord-sep-data">
+                <div class="order-itm">
+                    <div class="order-item-ne">
+                    Item Name
+                    </div>
+                    <div class="order-item-nm">
+                    x No.
+                    </div>
+                    <div class="order-item-vl">
+                    Price
+                    </div>
+                </div>
+            </div>
+            <div class="sep-line-div"></div>
+            
+            <div class="ord-sep-data">
+                {% comment %}  {% endcomment %}
+                <div class="order-item">
+                    <div class="order-item-nme">
+                    cakeoxnoxbnsbonbobsnbosb
+                    </div>
+                    <div class="order-item-num">
+                    x4
+                    </div>
+                    <div class="order-item-val">
+                    1000
+                    </div>
+                </div>
+                {% comment %}  {% endcomment %}
+                <div class="sep-line-div"></div>
+                <div class="ord-total">
+                    <h2>Total</h2>
+                    <h2>1000</h2>
+                </div>
+            </div>
+        </div>
+{% comment %} Item repet end {% endcomment %}
+    </div>
+</div>
 
-<section class="order-hist">
-    <article class="order">
-        <div class="order-info">
-            <div class="order-if">
-                id: doms
-            </div>
-            <div class="order-time">
-                time: doms
-            </div>
-        </div>
-    </article>
-    <article class="order">
-        <div class="order-info">
-            <div class="order-if">
-                id: doms
-            </div>
-            <div class="order-time">
-                time: doms
-            </div>
-        </div>
-    </article>
-</section>
-<!-- <section class="section-x">
-    <div>kechup</div>
-</section>
-<section class="section-y">
-    <div>kechup</div>
-</section> -->
 {% endblock %}

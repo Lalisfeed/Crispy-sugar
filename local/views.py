@@ -136,6 +136,17 @@ def settings(request):
     })
 
 
+# Order Page
+def neworder(request):
+    if not request.user.is_authenticated:
+        return HttpResponseRedirect(reverse('local:auth'))
+
+
+    return render(request, 'local/neworder.html', {
+        'newdata':'',
+    })
+
+
 # page for listing past orders
 def orders(request):
     if not request.user.is_authenticated:

@@ -1,0 +1,45 @@
+.new-ord {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.new-btn {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.new-ord-btn {
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+    outline: none;
+    color: #f1f1f1;
+    font-size: 16px;
+    font-weight: 500;
+    border-width: 0px;
+    border-radius: 24px;
+    background-color: #027fc7;
+}
+
+.new-ord-btn:hover {
+    background-color: #016aa7;
+}
+
+
+.sep-line {
+    width: 250px;
+    height: 2px;
+    background: #aaa;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.new-name {
+    text-align: center;
+    margin-bottom: 20px;
+}

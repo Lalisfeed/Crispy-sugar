@@ -23,3 +23,14 @@ class Newitem(models.Model):
 
     # Veg_choices = [('Veg', 'Veg'),
     #                ('Non-Veg', 'Non-Veg')]
+
+class Neworder(models.Model):
+    item_owner = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    item_order_label = models.CharField(max_length=64, null=True)
+    item_order_name = models.CharField(max_length=64, unique=True)
+    item_order_number = models.PositiveIntegerField(null=True)
+    item_order_price = models.PositiveIntegerField(null=True)
+    item_order_total_price = models.PositiveIntegerField(null=True)
+
+    def __str__(self):
+        return f"{self.item_order_total_price}"

@@ -1,0 +1,24 @@
+{% extends "local/locate.html" %}
+
+{% load static %}
+
+
+{% block title %}New Order{% endblock %}
+{% block head %}
+    <link href="{% static 'local/neworder.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+
+
+<div class="new-ord">
+    <div class="new-btn">
+        <a href="{% url 'local:orders' %}"><button class="new-ord-btn">View Orders</button></a>
+    </div>
+    <div class="sep-line"></div>
+    <div class="new-name">
+        <h1>Create New Order</h1>
+    </div>
+</div>
+
+{% endblock %}
