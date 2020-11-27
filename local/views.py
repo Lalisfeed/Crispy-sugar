@@ -5,11 +5,9 @@ from django.urls import reverse
 from django import forms
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth import authenticate, login, logout
-from .models import Newitem, Newlabel
-from passlib.hash import pbkdf2_sha256
 # Create your views here.
 
-
+from .models import Newitem, Newlabel, Neworder
 from .forms import NewSignUpForm, NewLoginForm, NewLabelField, NewItemField, NewDeleteField, NewDelLabelField, NewOrderField
 
 
@@ -39,7 +37,7 @@ def new(request):
 # page for authentication
 def auth(request):
     if request.user.is_authenticated:
-        return HttpResponseRedirect("menu/")
+        return HttpResponseRedirect(reverse("local:menu"))
     if request.method == "POST":
         usermail = request.POST["key_mail"]
         passcode = request.POST["key_code"]
@@ -48,7 +46,7 @@ def auth(request):
 
         if user is not None:
             login(request, user)
-            return HttpResponseRedirect("menu/")
+            return HttpResponseRedirect(reverse("local:menu"))
         else:
             return render(request, "local/auth.html", {
                 "loginForm": NewLoginForm(),
@@ -180,7 +178,9 @@ def neworder(request):
 def orders(request):
     if not request.user.is_authenticated:
         return HttpResponseRedirect(reverse('local:auth'))
-    return render(request, 'local/orders.html')
+    return render(request, 'local/orders.html', {
+        'allorders': Neworder.objects.filter(item_owner=request.user)
+    })
 
 
 # page for viewing profile and request option for deleting account

@@ -11,5 +11,25 @@
 
 {% block body %}
 
-
+<center>
+<h1>Your Profile</h1>
+<table>
+<tr>
+<td><h1>Username : </h1></td>
+<td><h1>{{user.username}}</h1></td>
+</tr>
+<tr>
+<td><h1>Firstname : </h1></td>
+<td><h1>{{user.first_name}}</h1></td>
+</tr>
+<tr>
+<td><h1>Lastname : </h1></td>
+<td><h1>{{user.last_name}}</h1></td>
+</tr>
+<tr>
+<td><h1>Email : </h1></td>
+<td><h1>{{user.email}}</h1></td>
+</tr>
+</table>
+</center>
 {% endblock %}

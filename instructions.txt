@@ -1,0 +1,16 @@
+This  Application is used to manage a Restaurants Database
+
+here the minimum requirements are :
+Python 3.8
+Django
+mysql
+mysqlclient
+
+Extra tools :
+Django Widget Tweaks (taken from https://github.com/jazzband/django-widget-tweaks) (for form styling)
+
+to run this application,
+Terminal Commands :
+- Python3 manage.py makemigrations
+- Python3 manage.py migrate --run-syncdb
+- Python3 manage.py runserver
