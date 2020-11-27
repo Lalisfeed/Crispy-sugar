@@ -22,3 +22,4 @@ Terminal Commands :
  -mysqldb
 
  go through master and ignore other branches
+the slides are present at (https://slides.com/copperstore/kechup)
