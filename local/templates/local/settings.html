@@ -4,6 +4,7 @@
 
 {% load widget_tweaks %}
 
+
 {% block title %}Edit Database{% endblock %}
 {% block head %}
     <link href="{% static 'local/settings.css' %}" rel="stylesheet">
@@ -62,9 +63,24 @@
                 </form>
             </div>
         </div>
+        
         <div class="stngs-form-c">
             <div class="item-form-header">
-                <h1>Delete items</h1>
+                <h1>Delete label</h1>
+            </div>
+            <div>
+                <form action="{% url 'local:settings' %}" method="post">
+                    {% csrf_token %}
+                    {{ delLabelForm.del_label_name|attr:"class:item-text-field"|attr:"placeholder:Label to Delete" }}
+                    <!-- <input type="text" class="item-text-field" placeholder="Item Name">             -->
+                    <input type="submit" value="Delete Label" class="del-sbt">
+                </form>
+            </div>
+        </div>
+
+        <div class="stngs-form-c">
+            <div class="item-form-header">
+                <h1>Delete item</h1>
             </div>
             <div>
                 <form action="{% url 'local:settings' %}" method="post">

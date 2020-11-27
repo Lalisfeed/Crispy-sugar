@@ -1,15 +1,9 @@
-.new-ord {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+#x1 {
+    color: #f1f1f1;
+    background: #007d00;
 }
 
 .new-btn {
-    width: 100%;
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     padding: 20px;
 }
 
@@ -42,4 +36,75 @@
 .new-name {
     text-align: center;
     margin-bottom: 20px;
+}
+
+.order-table {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.order-content {
+    width: 80%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    border-bottom: 1px solid #aaa;
+    border-radius: 5px;
+    margin: 5px;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 650px){
+    .order-content{
+        width: 100%;
+        padding:5px;
+    }
+}
+.label-tab, .label-tab-val {
+    flex: 1;
+    padding: 7px;
+    overflow: hidden;
+}
+
+
+.label-tab{
+    height: 60px;
+    color: #111;
+}
+.label-tab-val {
+    align-items: center;
+    min-height: 40px;
+    color: #333;
+}
+
+.new-btn-frm {
+    padding: 20px;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.new-ord-btn-frm {
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+    outline: none;
+    color: #f1f1f1;
+    font-size: 16px;
+    font-weight: 500;
+    border-width: 0px;
+    border-radius: 24px;
+    background-color: #4fa300;
+}
+
+.quant {
+    width: 80px;
+    height: 40px;
 }

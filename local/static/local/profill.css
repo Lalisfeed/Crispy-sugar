@@ -2,11 +2,3 @@
     color: #f1f1f1;
     background: #007d00;
 }
-
-.profile-need {
-    width: 330px;
-    height: auto;
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-}

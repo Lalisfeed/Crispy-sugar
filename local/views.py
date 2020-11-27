@@ -10,7 +10,7 @@ from passlib.hash import pbkdf2_sha256
 # Create your views here.
 
 
-from .forms import NewSignUpForm, NewLoginForm, NewLabelField, NewItemField, NewDeleteField
+from .forms import NewSignUpForm, NewLoginForm, NewLabelField, NewItemField, NewDeleteField, NewDelLabelField, NewOrderField
 
 
 # page for authentication 
@@ -48,9 +48,7 @@ def auth(request):
 
         if user is not None:
             login(request, user)
-            return render(request, "local/menu.html", {
-                "user":user
-            })
+            return HttpResponseRedirect("menu/")
         else:
             return render(request, "local/auth.html", {
                 "loginForm": NewLoginForm(),
@@ -71,9 +69,7 @@ def menu(request):
     return render(request, 'local/menu.html', {
         'labels': labels,
         'items': items,
-        'x': int(1),
-    }
-    )
+    })
 
 
 # page for adding or deleting any items from the  owners database
@@ -93,6 +89,7 @@ def settings(request):
                 "itemForm": NewItemField(),
                 "select_label": label_options,
                 "delForm": NewDeleteField(),
+                "delLabelForm": NewDelLabelField()
             })
 
         if request.POST.get('new_item_name'):
@@ -108,6 +105,7 @@ def settings(request):
                 "itemForm": NewItemField(),
                 "select_label": Newlabel.objects.filter(label_home=request.user),
                 "delForm": NewDeleteField(),
+                "delLabelForm": NewDelLabelField()
             })
 
         if request.POST.get('del_item_name'): # still checking
@@ -119,6 +117,20 @@ def settings(request):
                 "itemForm": NewItemField(),
                 "select_label": Newlabel.objects.filter(label_home = request.user),
                 "delForm": NewDeleteField(),
+                "delLabelForm": NewDelLabelField()
+            })
+
+        if request.POST.get('del_label_name'):  # still checking
+            del_label = NewDelLabelField()
+            del_label.del_label_name = request.POST['del_label_name']
+            Newlabel.objects.get(label_name=del_label.del_label_name,
+                                label_home=request.user).delete()
+            return render(request, 'local/settings.html', {
+                "labelForm": NewLabelField(),
+                "itemForm": NewItemField(),
+                "select_label": Newlabel.objects.filter(label_home=request.user),
+                "delForm": NewDeleteField(),
+                "delLabelForm": NewDelLabelField()
             })
     else :  
         return render(request, 'local/settings.html', {
@@ -126,6 +138,7 @@ def settings(request):
             "itemForm": NewItemField(),
             "select_label": Newlabel.objects.filter(label_home=request.user),
             "delForm": NewDeleteField(),
+            "delLabelForm": NewDelLabelField()
         })
     
     return render(request, 'local/settings.html', {
@@ -133,6 +146,7 @@ def settings(request):
         "itemForm": NewItemField(),
         "select_label": Newlabel.objects.filter(label_home=request.user),
         "delForm": NewDeleteField(),
+        "delLabelForm": NewDelLabelField()
     })
 
 
@@ -141,9 +155,24 @@ def neworder(request):
     if not request.user.is_authenticated:
         return HttpResponseRedirect(reverse('local:auth'))
 
+    labels = Newlabel.objects.filter(label_home=request.user)
+    items = Newitem.objects.filter(item_womb=request.user)
 
+    formdata = []
+    if request.method == "POST":
+        formdata = request.POST["quantity"]
+        return  render(request, 'local/neworder.html', {
+            'labels': labels,
+            'items': items,
+            'quantity': NewOrderField(),
+            'formdata': formdata,
+        })
+    
     return render(request, 'local/neworder.html', {
-        'newdata':'',
+        'labels': labels,
+        'items': items,
+        'quantity': NewOrderField(),
+        'formdata': formdata,
     })
 
 

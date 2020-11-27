@@ -28,7 +28,7 @@ class NewLabelField(forms.Form):
 class NewItemField(forms.Form):
     # labels and choices for new item field
     Veg_choices = [('Veg', 'Veg'),
-                   ('Non-Veg', 'Non-Veg')]
+                   ('Non', 'Non-Veg')]
     new_item_name = forms.CharField(max_length=64, required=True)
     new_item_price = forms.IntegerField(min_value=0, max_value=100000, required=True)
     new_item_label = forms.Select()
@@ -37,3 +37,11 @@ class NewItemField(forms.Form):
 
 class NewDeleteField(forms.Form):
     del_item_name = forms.CharField(max_length=64, required=True)
+
+
+class NewDelLabelField(forms.Form):
+    del_label_name = forms.CharField(max_length=64, required=True)
+
+
+class NewOrderField(forms.Form):
+    quantity = forms.IntegerField(min_value=0, max_value=10,required=True)

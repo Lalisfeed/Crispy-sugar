@@ -2,6 +2,7 @@
 
 {% load static %}
 
+{% load widget_tweaks %}
 
 {% block title %}Your Profile{% endblock %}
 {% block head %}
@@ -10,16 +11,5 @@
 
 {% block body %}
 
-<div class="profile-need">
-    <div class="profile-ned">
-        Username: <h1>{{user.username}}</h1>
-    </div>
-    <div class="profile-ned">
-        Firstname: <h1>{{user.first_name}}</h1>
-        Lastname: <h1>{{user.last_name}}</h1>
-    </div>
-    <div class="profile-ned">
-        Email: <h1>{{user.email}}</h1>
-    </div>
-</div>
+
 {% endblock %}

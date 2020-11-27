@@ -2,6 +2,8 @@
 
 {% load static %}
 
+{% load widget_tweaks %}
+
 
 {% block title %}New Order{% endblock %}
 {% block head %}
@@ -12,6 +14,7 @@
 
 
 <div class="new-ord">
+    <center>
     <div class="new-btn">
         <a href="{% url 'local:orders' %}"><button class="new-ord-btn">View Orders</button></a>
     </div>
@@ -19,6 +22,43 @@
     <div class="new-name">
         <h1>Create New Order</h1>
     </div>
+    </center>
+
+    <form action="{% url 'local:neworder' %}" method="POST">
+    {% csrf_token %}
+
+    <div class="order-table">
+        <div class="order-content">
+            <div class="label-tab"><h2>Label</h2></div>
+            <div class="label-tab"><h2>Item</h2></div>
+            <div class="label-tab"><h2>Type</h2></div>
+            <div class="label-tab"><h2>Price</h2></div>
+            <div class="label-tab"><h2>Quantity</h2></div>
+        </div>
+        {% for label in labels  %}
+        {% for item in items %}
+            {% if item.item_label == label.label_name%}
+            <div class="order-content">
+                <div class="label-tab-val"><h3>{{item}}</h3></div>
+                <div class="label-tab-val"><h3>{{label}}</h3></div>
+                <div class="label-tab-val"><h3>{{item.item_type}}</h3></div>
+                <div class="label-tab-val"><h3>{{item.item_price}}</h3></div>
+                <div class="label-tab-val"><h3>{{quantity.quantity |attr:"class:quant"|attr:"placeholder:x No."|attr:"autofocus:true" }}</h3></div>
+            </div>
+            {% endif %}
+        {% endfor %}
+        {% endfor %}
+    </div>
+    {{formdata}}
+    <center>
+    <div class="new-btn-frm" center>
+        <input type="submit" class="new-ord-btn-frm" value="Submit"/>    
+    </div>
+    </center>
+
+    </form>
+
 </div>
+
 
 {% endblock %}
