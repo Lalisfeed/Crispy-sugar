@@ -14,3 +14,11 @@ Terminal Commands :
 - Python3 manage.py makemigrations
 - Python3 manage.py migrate --run-syncdb
 - Python3 manage.py runserver
+
+ there are four branches here 
+ -master
+ -modfix
+ -TheEnd
+ -mysqldb
+
+ go through master and ignore other branches
